@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7o0k6gnyikd"
-path="res://.godot/imported/Idle4.png-a96fe0ab20059c7190dc798e52619b01.ctex"
+uid="uid://ik6wansx2jmt"
+path="res://.godot/imported/wand_Walk_Down1.png-56f8d20e489123f7464bfc0a19ab6aea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Demon/Idle4.png"
-dest_files=["res://.godot/imported/Idle4.png-a96fe0ab20059c7190dc798e52619b01.ctex"]
+source_file="res://Assets/Weapons/Magic_wand/wand_Walk_Down1.png"
+dest_files=["res://.godot/imported/wand_Walk_Down1.png-56f8d20e489123f7464bfc0a19ab6aea.ctex"]
 
 [params]
 

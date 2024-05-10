@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc0ovisn7can8"
-path="res://.godot/imported/Walk_Right4.png-bb4e029d6bffde83802aa83d35542572.ctex"
+uid="uid://4oml4xgwafpl"
+path="res://.godot/imported/Walk_Top4.png-4fbd96e6c2084d2aa2a551d85171bab4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Main/Walk_Right/Walk_Right4.png"
-dest_files=["res://.godot/imported/Walk_Right4.png-bb4e029d6bffde83802aa83d35542572.ctex"]
+source_file="res://Assets/Characters/Wizard/Walk_Top/Walk_Top4.png"
+dest_files=["res://.godot/imported/Walk_Top4.png-4fbd96e6c2084d2aa2a551d85171bab4.ctex"]
 
 [params]
 

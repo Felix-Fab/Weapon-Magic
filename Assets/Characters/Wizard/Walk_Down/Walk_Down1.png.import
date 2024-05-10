@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byou5mfv3m5gn"
-path="res://.godot/imported/Idle3.png-b3d0480d490f03ebc4ab09caf98d960d.ctex"
+uid="uid://cjtcr2tj78my4"
+path="res://.godot/imported/Walk_Down1.png-df34525f0d0ff4fb71e6bd94cb6253a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Demon/Idle3.png"
-dest_files=["res://.godot/imported/Idle3.png-b3d0480d490f03ebc4ab09caf98d960d.ctex"]
+source_file="res://Assets/Characters/Wizard/Walk_Down/Walk_Down1.png"
+dest_files=["res://.godot/imported/Walk_Down1.png-df34525f0d0ff4fb71e6bd94cb6253a5.ctex"]
 
 [params]
 

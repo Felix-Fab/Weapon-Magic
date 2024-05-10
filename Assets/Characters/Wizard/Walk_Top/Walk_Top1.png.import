@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dftgx08n4oaeb"
-path="res://.godot/imported/Idle2.png-a0fd50d90f949baf9c2f684894e913cd.ctex"
+uid="uid://dxviyhl75nwsm"
+path="res://.godot/imported/Walk_Top1.png-0c0753183467a7afe21661fa63087ea3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Demon/Idle2.png"
-dest_files=["res://.godot/imported/Idle2.png-a0fd50d90f949baf9c2f684894e913cd.ctex"]
+source_file="res://Assets/Characters/Wizard/Walk_Top/Walk_Top1.png"
+dest_files=["res://.godot/imported/Walk_Top1.png-0c0753183467a7afe21661fa63087ea3.ctex"]
 
 [params]
 

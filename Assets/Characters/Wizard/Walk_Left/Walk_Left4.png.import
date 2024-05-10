@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp4t1te4ywn6y"
-path="res://.godot/imported/Walk_Right1.png-f4b555b2d47b5df75019cc60e5267afc.ctex"
+uid="uid://b52hy26htwdf0"
+path="res://.godot/imported/Walk_Left4.png-383bb9f5916258232c2f80bb8a43a685.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Main/Walk_Right/Walk_Right1.png"
-dest_files=["res://.godot/imported/Walk_Right1.png-f4b555b2d47b5df75019cc60e5267afc.ctex"]
+source_file="res://Assets/Characters/Wizard/Walk_Left/Walk_Left4.png"
+dest_files=["res://.godot/imported/Walk_Left4.png-383bb9f5916258232c2f80bb8a43a685.ctex"]
 
 [params]
 

@@ -7,8 +7,8 @@ func get_input():
 	velocity = input_direction * SPEED
 	
 	if(Input.is_action_pressed("ui_down")):
-		print("Down Pressed")
 		$AnimatedSprite2D.play("down")
+		$AnimatedSprite2D2.play("default")
 		return
 		
 	if(Input.is_action_pressed("ui_up")):
@@ -16,7 +16,6 @@ func get_input():
 		return
 	
 	if(Input.is_action_pressed("ui_right")):
-		print("Right Pressed")
 		$AnimatedSprite2D.play("right")
 		return
 		

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuke3avdoiiy"
-path="res://.godot/imported/Walk_Left1.png-39e315f667f1c395454822cee50fbaa2.ctex"
+uid="uid://c74gugqf4wd4p"
+path="res://.godot/imported/wand_Walk_Down4.png-576e072c987bbe47ffc91cd7c1f4acc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Main/Walk_Left/Walk_Left1.png"
-dest_files=["res://.godot/imported/Walk_Left1.png-39e315f667f1c395454822cee50fbaa2.ctex"]
+source_file="res://Assets/Weapons/Magic_wand/wand_Walk_Down4.png"
+dest_files=["res://.godot/imported/wand_Walk_Down4.png-576e072c987bbe47ffc91cd7c1f4acc8.ctex"]
 
 [params]
 
