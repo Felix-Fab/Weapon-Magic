@@ -1,10 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsuvoy4wusj87"]
+[gd_scene load_steps=25 format=3 uid="uid://bsuvoy4wusj87"]
 
 [ext_resource type="Texture2D" uid="uid://cmbirboc1mot1" path="res://Assets/Tiles/TX Tileset Grass.png" id="2_tvjo1"]
 [ext_resource type="Texture2D" uid="uid://bsdvawxy4fiyp" path="res://Assets/Tiles/TX Tileset Wall.png" id="3_6lckb"]
 [ext_resource type="Texture2D" uid="uid://dj7ylf2yf1qvl" path="res://Assets/Tiles/TX Struct.png" id="3_crqkw"]
 [ext_resource type="Texture2D" uid="uid://qwkskhkwubht" path="res://Assets/Tiles/TX Props.png" id="4_7frsk"]
 [ext_resource type="Script" path="res://Walk.gd" id="5_nnwkh"]
+[ext_resource type="Texture2D" uid="uid://cjtcr2tj78my4" path="res://Assets/Main/Walk_Down/Walk_Down1.png" id="6_gqwgt"]
+[ext_resource type="Texture2D" uid="uid://deq0s48wggmh0" path="res://Assets/Main/Walk_Down/Walk_Down2.png" id="7_sf6dy"]
+[ext_resource type="Texture2D" uid="uid://tn1gsswftv32" path="res://Assets/Main/Walk_Down/Walk_Down3.png" id="8_fqgvu"]
+[ext_resource type="Texture2D" uid="uid://bqwl0oy0asyd6" path="res://Assets/Main/Walk_Down/Walk_Down4.png" id="9_me6np"]
+[ext_resource type="Texture2D" uid="uid://dp4t1te4ywn6y" path="res://Assets/Main/Walk_Right/Walk_Right1.png" id="10_eo5h8"]
+[ext_resource type="Texture2D" uid="uid://bhwtee16prpp7" path="res://Assets/Main/Walk_Right/Walk_Right2.png" id="11_fuvrs"]
+[ext_resource type="Texture2D" uid="uid://bsuke3avdoiiy" path="res://Assets/Main/Walk_Left/Walk_Left1.png" id="11_ku1ja"]
+[ext_resource type="Texture2D" uid="uid://n0xk6ew370xv" path="res://Assets/Main/Walk_Right/Walk_Right3.png" id="12_ac5bn"]
+[ext_resource type="Texture2D" uid="uid://d2itbl0w7jawv" path="res://Assets/Main/Walk_Left/Walk_Left2.png" id="12_w71g2"]
+[ext_resource type="Texture2D" uid="uid://7562ucc2yu1a" path="res://Assets/Main/Walk_Left/Walk_Left3.png" id="13_qq3fd"]
+[ext_resource type="Texture2D" uid="uid://cc0ovisn7can8" path="res://Assets/Main/Walk_Right/Walk_Right4.png" id="13_rhets"]
+[ext_resource type="Texture2D" uid="uid://b52hy26htwdf0" path="res://Assets/Main/Walk_Left/Walk_Left4.png" id="14_mh451"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p5xy"]
 texture = ExtResource("2_tvjo1")
@@ -1028,6 +1040,69 @@ sources/4 = SubResource("TileSetAtlasSource_kpqnt")
 sources/5 = SubResource("TileSetAtlasSource_5eoju")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8kiv"]
+size = Vector2(29, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjg2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gqwgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sf6dy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fqgvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_me6np")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eo5h8")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ku1ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w71g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qq3fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mh451")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_eo5h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fuvrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ac5bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rhets")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -1043,9 +1118,14 @@ layer_2/name = "Foreground"
 layer_2/tile_data = PackedInt32Array(65537, 1441797, 17, 131073, 1441797, 18, 196609, 1441797, 19, 262145, 1441797, 20, 65538, 1507333, 17, 131074, 1507333, 18, 196610, 1507333, 19, 262146, 1507333, 20, 327682, 1507333, 21, 65539, 1572869, 17, 131075, 1572869, 18, 196611, 1572869, 19, 262147, 1572869, 20, 327683, 1572869, 21, 65540, 1638405, 17, 131076, 1638405, 18, 196612, 1638405, 19, 262148, 1638405, 20, 327684, 1638405, 21, 65541, 1703941, 17, 131077, 1703941, 18, 196613, 1703941, 19, 262149, 1703941, 20, 327685, 1703941, 21, 65542, 1769477, 17, 131078, 1769477, 18, 196614, 1769477, 19, 262150, 1769477, 20, 10, 1179653, 1, 65546, 1179653, 2, 131082, 1179653, 3, 11, 1245189, 1, 65547, 1245189, 2, 131083, 1245189, 3, 12, 1310725, 1, 65548, 1310725, 2, 131084, 1310725, 3, 13, 1376261, 1, 65549, 1376261, 2, 131085, 1376261, 3)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(80, 40)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("5_nnwkh")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_f8kiv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_fjg2m")
+animation = &"down"
