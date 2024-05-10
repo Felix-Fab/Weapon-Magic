@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bsuvoy4wusj87"]
+[gd_scene load_steps=29 format=3 uid="uid://bsuvoy4wusj87"]
 
 [ext_resource type="Texture2D" uid="uid://cmbirboc1mot1" path="res://Assets/Tiles/TX Tileset Grass.png" id="2_tvjo1"]
 [ext_resource type="Texture2D" uid="uid://bsdvawxy4fiyp" path="res://Assets/Tiles/TX Tileset Wall.png" id="3_6lckb"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://7562ucc2yu1a" path="res://Assets/Main/Walk_Left/Walk_Left3.png" id="13_qq3fd"]
 [ext_resource type="Texture2D" uid="uid://cc0ovisn7can8" path="res://Assets/Main/Walk_Right/Walk_Right4.png" id="13_rhets"]
 [ext_resource type="Texture2D" uid="uid://b52hy26htwdf0" path="res://Assets/Main/Walk_Left/Walk_Left4.png" id="14_mh451"]
+[ext_resource type="Texture2D" uid="uid://dxviyhl75nwsm" path="res://Assets/Main/Walk_Top/Walk_Top1.png" id="18_6fjnk"]
+[ext_resource type="Texture2D" uid="uid://bvq7otmykh82k" path="res://Assets/Main/Walk_Top/Walk_Top2.png" id="19_etw25"]
+[ext_resource type="Texture2D" uid="uid://cxcti4is1q7ws" path="res://Assets/Main/Walk_Top/Walk_Top3.png" id="20_ldoi2"]
+[ext_resource type="Texture2D" uid="uid://4oml4xgwafpl" path="res://Assets/Main/Walk_Top/Walk_Top4.png" id="21_pi73o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p5xy"]
 texture = ExtResource("2_tvjo1")
@@ -1056,12 +1060,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_me6np")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_eo5h8")
 }],
 "loop": true,
 "name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gqwgt")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1098,7 +1107,19 @@ animations = [{
 "name": &"right",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_6fjnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_etw25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ldoi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pi73o")
+}],
 "loop": true,
 "name": &"up",
 "speed": 5.0
