@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://bsuvoy4wusj87"]
+[gd_scene load_steps=143 format=3 uid="uid://bsuvoy4wusj87"]
 
 [ext_resource type="Texture2D" uid="uid://cmbirboc1mot1" path="res://Assets/Tiles/TX Tileset Grass.png" id="1_lq51x"]
 [ext_resource type="Script" path="res://Scripts/Start.gd" id="1_tfsyl"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cv4yy33udpxt3" path="res://Assets/Weapons/Magic_wand/magic_wand.png" id="12_k1uvb"]
 [ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/ak47.png" id="13_a4cms"]
 [ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullets/WeaponBulletPosition.tscn" id="13_wacl4"]
-[ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/pumpgun.png" id="14_vx06y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p5xy"]
 texture = ExtResource("1_lq51x")
@@ -3104,7 +3103,7 @@ texture = ExtResource("4_d7c84")
 19:31/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_1rvqv"]
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_1p5xy")
 sources/3 = SubResource("TileSetAtlasSource_fi0us")
 sources/4 = SubResource("TileSetAtlasSource_kpqnt")
@@ -3972,74 +3971,6 @@ region = Rect2(96, 192, 48, 64)
 atlas = ExtResource("13_a4cms")
 region = Rect2(144, 192, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urwel"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(0, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c7e2g"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(0, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ceko5"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(48, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxo1e"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(96, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lfpyy"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(144, 0, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5hrf8"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(0, 64, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4uja"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(48, 64, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tm8db"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(96, 64, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4mnk8"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(144, 64, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2u86"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(0, 128, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ma21d"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(48, 128, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q6f5h"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(96, 128, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3q65"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(144, 128, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwtwc"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(0, 192, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aup0u"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(48, 192, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t1ki7"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(96, 192, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1q4vt"]
-atlas = ExtResource("14_vx06y")
-region = Rect2(144, 192, 48, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0yfc"]
 animations = [{
 "frames": [{
@@ -4193,82 +4124,6 @@ animations = [{
 "loop": true,
 "name": &"Weapon2_Walk_Top",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_urwel")
-}],
-"loop": true,
-"name": &"Weapon3_Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c7e2g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ceko5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qxo1e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lfpyy")
-}],
-"loop": true,
-"name": &"Weapon3_Walk_Down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5hrf8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b4uja")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tm8db")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4mnk8")
-}],
-"loop": true,
-"name": &"Weapon3_Walk_Left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w2u86")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ma21d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q6f5h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v3q65")
-}],
-"loop": true,
-"name": &"Weapon3_Walk_Right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lwtwc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aup0u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t1ki7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1q4vt")
-}],
-"loop": true,
-"name": &"Weapon3_Walk_Top",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_663cf"]
@@ -4278,7 +4133,6 @@ size = Vector2(458, 217)
 script = ExtResource("1_tfsyl")
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-1, 1)
 scale = Vector2(1.3, 1.3)
 tile_set = SubResource("TileSet_1rvqv")
 format = 2
@@ -4292,7 +4146,6 @@ layer_2/tile_data = PackedInt32Array(65537, 1441797, 17, 131073, 1441797, 18, 19
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(84, 36)
 scale = Vector2(1.2, 1.2)
-collision_layer = 5
 script = ExtResource("5_jtmqv")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -4301,16 +4154,19 @@ shape = SubResource("RectangleShape2D_f8kiv")
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_fjg2m")
-animation = &"Player4_Idle"
+animation = &"Player5_Walk_Left"
 
 [node name="WeaponAnimation" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_u0yfc")
-animation = &"Weapon3_Walk_Top"
+animation = &"Weapon2_Walk_Top"
 
 [node name="WeaponCountdown" type="Timer" parent="CharacterBody2D"]
-wait_time = 0.25
+wait_time = 0.1
 
 [node name="WeaponBulletPosition" parent="CharacterBody2D" instance=ExtResource("13_wacl4")]
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(10.8333, 5)
 
 [node name="Height1" type="Area2D" parent="."]
 

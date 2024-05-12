@@ -1,7 +1,5 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-var BulletVelocity = Vector2(1,0)
-var speed = 500
-
-func _physics_process(delta):
-	var collision_info = move_and_collide(BulletVelocity.normalized() * delta * speed)
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if is_instance_of(body, TileMap):
+		queue_free()

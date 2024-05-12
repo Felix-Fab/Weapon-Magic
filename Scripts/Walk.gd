@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var CurrentAnimation = "Idle"
+
 var bullet = preload("res://Szenes/Bullets/Ak47Bullet.tscn")
 
 const SPEED = 150.00
@@ -11,31 +13,47 @@ func get_input():
 	velocity = input_direction * SPEED
 	
 	if(Input.is_action_pressed("ui_down")):
-		$AnimatedSprite2D.play("Player" + str(Game.PlayerSelect) + "_Walk_Down")
-		$AnimatedSprite2D2.play("default")
+		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Down")
+		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Down")
+		
+		CurrentAnimation = "Walk_Down"
 		return
 		
 	if(Input.is_action_pressed("ui_up")):
-		$AnimatedSprite2D.play("Player" + str(Game.PlayerSelect) + "_Walk_Top")
+		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Top")
+		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Top")
+		
+		CurrentAnimation = "Walk_Top"
 		return
 	
 	if(Input.is_action_pressed("ui_right")):
-		$AnimatedSprite2D.play("Player" + str(Game.PlayerSelect) + "_Walk_Right")
+		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Right")
+		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Right")
+		
+		CurrentAnimation = "Walk_Right"
 		return
 		
 	if(Input.is_action_pressed("ui_left")):
-		$AnimatedSprite2D.play("Player" + str(Game.PlayerSelect) + "_Walk_Left")
+		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Left")
+		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Left")
+		
+		CurrentAnimation = "Walk_Left"
 		return
 	
-	$AnimatedSprite2D.play("Player" + str(Game.PlayerSelect) + "_Idle")
+	$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Idle")
+	$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Idle")
+	
+	CurrentAnimation = "Idle"
+	
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
 
 func _process(delta):
 	if Input.is_action_pressed("ui_select") && Shootable:
 		var bullet_instance = bullet.instantiate()
 		
-		bullet_instance.position = $Weapon_Down.global_position
-		
-		print($Weapon_Down.position)
+		bullet_instance.position = $WeaponBulletPosition.get_node(str(Game.WeaponSelect) + "/" + CurrentAnimation).global_position
 		
 		var InputVector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		
@@ -49,12 +67,7 @@ func _process(delta):
 		get_tree().get_root().add_child(bullet_instance)
 		
 		Shootable = false
-		$Timer.start()
+		$WeaponCountdown.start()
 
-func _physics_process(delta):
-	get_input()
-	move_and_slide()
-
-
-func _on_timer_timeout():
+func _on_weapon_countdown_timeout():
 	Shootable = true
