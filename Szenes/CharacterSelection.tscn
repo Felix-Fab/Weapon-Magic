@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://dj5qxfjgto4pf"]
+
+[ext_resource type="Texture2D" uid="uid://cgu8ai41e3ow8" path="res://Assets/Characters/1.png" id="2_4fqkp"]
+[ext_resource type="Texture2D" uid="uid://c47cuam2d0bxh" path="res://Assets/CharacterSelection/Background.png" id="2_8kosp"]
+[ext_resource type="Script" path="res://Scripts/PlayerSelect.gd" id="2_d74b4"]
+[ext_resource type="Texture2D" uid="uid://dy3fie4sxofiu" path="res://Assets/Characters/2.png" id="3_yunbw"]
+[ext_resource type="Texture2D" uid="uid://clfii1rgm7k48" path="res://Assets/Characters/3.png" id="4_atqom"]
+[ext_resource type="Texture2D" uid="uid://csydop42wh4no" path="res://Assets/Characters/4.png" id="5_ml8pn"]
+[ext_resource type="Texture2D" uid="uid://cc1fcrx3h6rs1" path="res://Assets/Characters/5.png" id="6_rf0k3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo3yw"]
+atlas = ExtResource("2_4fqkp")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54abm"]
+atlas = ExtResource("3_yunbw")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mlk2"]
+atlas = ExtResource("4_atqom")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo4d6"]
+atlas = ExtResource("5_ml8pn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw0dq"]
+atlas = ExtResource("6_rf0k3")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlytk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo3yw")
+}],
+"loop": true,
+"name": &"Player1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54abm")
+}],
+"loop": true,
+"name": &"Player2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mlk2")
+}],
+"loop": true,
+"name": &"Player3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo4d6")
+}],
+"loop": true,
+"name": &"Player4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw0dq")
+}],
+"loop": true,
+"name": &"Player5",
+"speed": 5.0
+}]
+
+[node name="CharacterSelection" type="Node2D"]
+script = ExtResource("2_d74b4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3.31988, 2.80519)
+texture = ExtResource("2_8kosp")
+
+[node name="PlayerSelect" type="AnimatedSprite2D" parent="."]
+position = Vector2(575, 305)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mlytk")
+animation = &"Player5"
+
+[node name="LeftButton" type="Button" parent="."]
+offset_left = 392.0
+offset_top = 303.0
+offset_right = 448.0
+offset_bottom = 347.0
+text = "Left"
+
+[node name="RightButton" type="Button" parent="."]
+offset_left = 718.0
+offset_top = 307.0
+offset_right = 774.0
+offset_bottom = 351.0
+text = "Right"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 528.0
+offset_top = 455.0
+offset_right = 624.0
+offset_bottom = 491.0
+text = "Play"
+
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
