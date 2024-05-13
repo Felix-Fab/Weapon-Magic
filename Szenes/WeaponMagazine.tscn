@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c270vwijqmtfc"]
+[gd_scene load_steps=10 format=3 uid="uid://c270vwijqmtfc"]
 
-[ext_resource type="Texture2D" uid="uid://dir6x6qg4wiyu" path="res://Assets/Weapons/Ak47/Ak47Menu.png" id="1_swptl"]
 [ext_resource type="Script" path="res://Scripts/WeaponMagazine.gd" id="1_vgi5f"]
-[ext_resource type="Texture2D" uid="uid://cq7jmf3tfevka" path="res://Assets/reload/busy_circle_fade.png" id="3_20j3f"]
+[ext_resource type="Texture2D" uid="uid://cq7jmf3tfevka" path="res://Assets/Weapons/Reload/Reload.png" id="3_20j3f"]
 
 [sub_resource type="Theme" id="Theme_0llkk"]
 
@@ -21,6 +20,21 @@ font_size = 21
 [sub_resource type="LabelSettings" id="LabelSettings_71tkh"]
 font_size = 21
 
+[sub_resource type="Animation" id="Animation_wbgye"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Reload:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
 [sub_resource type="Animation" id="Animation_ve5wh"]
 resource_name = "reload"
 length = 2.0
@@ -37,21 +51,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [6.28319, 6.28319, 6.28319, 6.28319, 6.28319, 6.28319, 6.28319, 0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_wbgye"]
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Reload:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dxa03"]
@@ -82,7 +81,6 @@ texture = ExtResource("3_20j3f")
 [node name="Weapon" type="Sprite2D" parent="Panel/Weapon"]
 position = Vector2(33, 24)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_swptl")
 
 [node name="Magazin" type="Label" parent="Panel/Weapon"]
 offset_left = 64.0

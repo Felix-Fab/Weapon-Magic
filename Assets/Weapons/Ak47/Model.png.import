@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq7jmf3tfevka"
-path="res://.godot/imported/busy_circle_fade.png-537374b94498202d75844422db28bd29.ctex"
+uid="uid://dir6x6qg4wiyu"
+path="res://.godot/imported/Model.png-f3ef04a23517cd80efcac8b46634ce80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/reload/busy_circle_fade.png"
-dest_files=["res://.godot/imported/busy_circle_fade.png-537374b94498202d75844422db28bd29.ctex"]
+source_file="res://Assets/Weapons/Ak47/Model.png"
+dest_files=["res://.godot/imported/Model.png-f3ef04a23517cd80efcac8b46634ce80.ctex"]
 
 [params]
 

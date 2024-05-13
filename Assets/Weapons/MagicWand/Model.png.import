@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dir6x6qg4wiyu"
-path="res://.godot/imported/Ak47Menu.png-d162e33dd9b655e80364e98d9bf59336.ctex"
+uid="uid://ddslcfc3vga2m"
+path="res://.godot/imported/Model.png-17286d6cd9dc29af640adbfdf9698593.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Ak47/Ak47Menu.png"
-dest_files=["res://.godot/imported/Ak47Menu.png-d162e33dd9b655e80364e98d9bf59336.ctex"]
+source_file="res://Assets/Weapons/MagicWand/Model.png"
+dest_files=["res://.godot/imported/Model.png-17286d6cd9dc29af640adbfdf9698593.ctex"]
 
 [params]
 
