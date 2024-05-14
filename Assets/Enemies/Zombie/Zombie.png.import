@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ajq0t3q1u41"
-path="res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"
+uid="uid://cw3yoaaqyx8md"
+path="res://.godot/imported/Zombie.png-c54829c9f6cadc3c499777476c9700db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Ak47/ak47.png"
-dest_files=["res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"]
+source_file="res://Assets/Enemies/Zombie/Zombie.png"
+dest_files=["res://.godot/imported/Zombie.png-c54829c9f6cadc3c499777476c9700db.ctex"]
 
 [params]
 

@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=3 uid="uid://hj3mcxgcn7c5"]
+
+[ext_resource type="Texture2D" uid="uid://cw3yoaaqyx8md" path="res://Assets/Enemies/Zombie/Zombie.png" id="1_p65vt"]
+[ext_resource type="Script" path="res://Scripts/Zombie.gd" id="1_xscur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgv7e"]
+radius = 12.0104
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svlv1"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5ofg"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jbin"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5jln"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej17i"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urgrp"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs7hg"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n18v2"]
+atlas = ExtResource("1_p65vt")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msbx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svlv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5ofg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jbin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5jln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej17i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urgrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs7hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n18v2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Zombie" type="CharacterBody2D"]
+collision_layer = 8
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_xscur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("CircleShape2D_jgv7e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_msbx5")
+frame_progress = 0.233281
+
+[node name="Navigation" type="Node2D" parent="."]
+
+[node name="RecalculateTimer" type="Timer" parent="Navigation"]
+wait_time = 0.1
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Navigation"]
+path_desired_distance = 1000.0
+target_desired_distance = 1000.0
+path_max_distance = 10000.0
+path_postprocessing = 1
+avoidance_enabled = true
+debug_enabled = true
+
+[connection signal="timeout" from="Navigation/RecalculateTimer" to="." method="_on_recalculate_timer_timeout"]
+[connection signal="velocity_computed" from="Navigation/NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
