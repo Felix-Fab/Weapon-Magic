@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw3yoaaqyx8md"
-path="res://.godot/imported/Zombie.png-c54829c9f6cadc3c499777476c9700db.ctex"
+uid="uid://cs1a388h676ra"
+path="res://.godot/imported/MagicWandBullet.png-0cab87d66be18b8287fa31f944016ba9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Zombie/Zombie.png"
-dest_files=["res://.godot/imported/Zombie.png-c54829c9f6cadc3c499777476c9700db.ctex"]
+source_file="res://Assets/Weapons/Bullet/MagicWandBullet.png"
+dest_files=["res://.godot/imported/MagicWandBullet.png-0cab87d66be18b8287fa31f944016ba9.ctex"]
 
 [params]
 
