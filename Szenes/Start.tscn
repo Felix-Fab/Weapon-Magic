@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/Ak47.png" id="13_a4cms"]
 [ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullets/WeaponBulletPosition.tscn" id="13_wacl4"]
 [ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/pumpgun.png" id="14_vx06y"]
-[ext_resource type="AudioStream" uid="uid://bx3np67wjw13y" path="res://Sounds/Weapons/Ak47/Ak47Shoot.wav" id="16_h0ywi"]
+[ext_resource type="AudioStream" uid="uid://bpkrs5otjm6yw" path="res://Sounds/Weapons/MagicWand/MagicWantShoot.wav" id="16_vo1xp"]
 [ext_resource type="PackedScene" uid="uid://c270vwijqmtfc" path="res://Szenes/WeaponMagazine.tscn" id="16_wcqh1"]
 [ext_resource type="AudioStream" uid="uid://255jp886c32l" path="res://Sounds/Weapons/Ak47/Ak47Reload.wav" id="17_mjd8r"]
 [ext_resource type="AudioStream" uid="uid://sa5kt34fi7c0" path="res://Sounds/Weapons/Ak47/Ak47Empty.wav" id="18_gdm62"]
@@ -4626,7 +4626,7 @@ wait_time = 0.25
 one_shot = true
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
-stream = ExtResource("16_h0ywi")
+stream = ExtResource("16_vo1xp")
 volume_db = -10.0
 
 [node name="ReloadSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]

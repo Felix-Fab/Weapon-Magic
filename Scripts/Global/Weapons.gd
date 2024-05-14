@@ -15,7 +15,7 @@ var WeaponDetails = [
 		'ShootTime': 0.15,
 		'ReloadTime': 2.5,
 		'Magazin': 30,
-		'BulletSpeed': 1000,
+		'BulletSpeed': 300,
 		'MaxRecoil': 20.0,
 		'IconScale': 1.5
 	}

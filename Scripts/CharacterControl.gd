@@ -64,7 +64,7 @@ func shoot():
 		
 		ImpulseVector = ImpulseVector.rotated(recoil_radians_actual)
 		
-		#bullet_instance.get_node("Sprite2D").rotate(ImpulseVector.angle())
+		bullet_instance.get_node("Sprite2D").rotate(ImpulseVector.angle())
 		bullet_instance.apply_impulse(ImpulseVector, Vector2())
 		get_tree().get_root().add_child(bullet_instance)
 		
