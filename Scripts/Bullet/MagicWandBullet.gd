@@ -1,5 +1,9 @@
 extends RigidBody2D
 
 func _on_body_entered(body):
-	if is_instance_of(body, TileMap):
+	
+	print("Bullet:")
+	print(body)
+	
+	if body.is_in_group("BulletWall"):
 		queue_free()

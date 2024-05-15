@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rf42"]
 
-[node name="MagicWandBullet" type="RigidBody2D"]
+[node name="MagicWandBullet" type="RigidBody2D" groups=["Bullet"]]
 collision_layer = 0
 collision_mask = 2
 gravity_scale = 0.0
