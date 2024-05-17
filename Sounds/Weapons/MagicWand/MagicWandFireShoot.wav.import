@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dr0x8xof5l3l6"
-path="res://.godot/imported/MagicWantFireShoot.wav-a60e755c8a86d9fe6f20a7a88bde718d.sample"
+path="res://.godot/imported/MagicWandFireShoot.wav-18ed81b9c5109fcdc718721d4ffb11a3.sample"
 
 [deps]
 
-source_file="res://Sounds/Weapons/MagicWand/MagicWantFireShoot.wav"
-dest_files=["res://.godot/imported/MagicWantFireShoot.wav-a60e755c8a86d9fe6f20a7a88bde718d.sample"]
+source_file="res://Sounds/Weapons/MagicWand/MagicWandFireShoot.wav"
+dest_files=["res://.godot/imported/MagicWandFireShoot.wav-18ed81b9c5109fcdc718721d4ffb11a3.sample"]
 
 [params]
 

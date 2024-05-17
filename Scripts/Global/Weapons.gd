@@ -8,7 +8,8 @@ var WeaponDetails = [
 		'Magazin': 20,
 		'BulletSpeed': 1000,
 		'MaxRecoil': 10.0,
-		'IconScale': 1.2
+		'IconScale': 1.2,
+		'Damage': 10
 	},
 	{
 		'Name': 'Ak47',
@@ -17,6 +18,7 @@ var WeaponDetails = [
 		'Magazin': 30,
 		'BulletSpeed': 300,
 		'MaxRecoil': 20.0,
-		'IconScale': 1.5
+		'IconScale': 1.5,
+		'Damage': 20
 	}
 ]

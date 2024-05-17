@@ -12,14 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://csydop42wh4no" path="res://Assets/Characters/4.png" id="10_ar7ty"]
 [ext_resource type="Texture2D" uid="uid://cc1fcrx3h6rs1" path="res://Assets/Characters/5.png" id="11_o4u48"]
 [ext_resource type="Texture2D" uid="uid://cv4yy33udpxt3" path="res://Assets/Weapons/MagicWand/MagicWand.png" id="12_k1uvb"]
-[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/Ak47.png" id="13_a4cms"]
-[ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullets/WeaponBulletPosition.tscn" id="13_wacl4"]
+[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/ak47.png" id="13_a4cms"]
+[ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullet/WeaponBulletPosition.tscn" id="13_wacl4"]
 [ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/pumpgun.png" id="14_vx06y"]
 [ext_resource type="AudioStream" uid="uid://bpkrs5otjm6yw" path="res://Sounds/Weapons/MagicWand/MagicWantShoot.wav" id="16_vo1xp"]
 [ext_resource type="PackedScene" uid="uid://c270vwijqmtfc" path="res://Szenes/WeaponMagazine.tscn" id="16_wcqh1"]
 [ext_resource type="AudioStream" uid="uid://255jp886c32l" path="res://Sounds/Weapons/Ak47/Ak47Reload.wav" id="17_mjd8r"]
 [ext_resource type="AudioStream" uid="uid://sa5kt34fi7c0" path="res://Sounds/Weapons/Ak47/Ak47Empty.wav" id="18_gdm62"]
-[ext_resource type="PackedScene" uid="uid://hj3mcxgcn7c5" path="res://Szenes/Enemies/Zombie.tscn" id="20_hwl52"]
+[ext_resource type="PackedScene" uid="uid://by4fouc5oipyj" path="res://Szenes/Enemies/Zombie.tscn" id="20_hwl52"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oss14"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -4661,6 +4661,10 @@ position = Vector2(1016, -20)
 
 [node name="Zombie" parent="." node_paths=PackedStringArray("momenet_target") instance=ExtResource("20_hwl52")]
 position = Vector2(634, 208)
+momenet_target = NodePath("../CharacterBody2D")
+
+[node name="Zombie2" parent="." node_paths=PackedStringArray("momenet_target") instance=ExtResource("20_hwl52")]
+position = Vector2(653, 133)
 momenet_target = NodePath("../CharacterBody2D")
 
 [connection signal="timeout" from="CharacterBody2D/WeaponCountdown" to="CharacterBody2D" method="_on_weapon_countdown_timeout"]

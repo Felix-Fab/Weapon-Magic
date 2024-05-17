@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c270vwijqmtfc"]
 
-[ext_resource type="Script" path="res://Scripts/WeaponMagazine.gd" id="1_vgi5f"]
-[ext_resource type="Texture2D" uid="uid://cq7jmf3tfevka" path="res://Assets/Weapons/Reload/Reload.png" id="3_20j3f"]
+[ext_resource type="Script" path="res://Scripts/Bullet/WeaponMagazine.gd" id="1_vgi5f"]
+[ext_resource type="Texture2D" uid="uid://cq7jmf3tfevka" path="res://Assets/Tiles/UI/Reload/Reload.png" id="3_20j3f"]
 
 [sub_resource type="Theme" id="Theme_0llkk"]
 

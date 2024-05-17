@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq7jmf3tfevka"
-path="res://.godot/imported/Reload.png-0e19912fb35bc1c0a9f8d9c039f6c226.ctex"
+path="res://.godot/imported/Reload.png-f11e7d7ebce51c328726722a0bf2d94a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Reload/Reload.png"
-dest_files=["res://.godot/imported/Reload.png-0e19912fb35bc1c0a9f8d9c039f6c226.ctex"]
+source_file="res://Assets/Tiles/UI/Reload/Reload.png"
+dest_files=["res://.godot/imported/Reload.png-f11e7d7ebce51c328726722a0bf2d94a.ctex"]
 
 [params]
 

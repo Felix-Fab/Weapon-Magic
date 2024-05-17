@@ -22,14 +22,17 @@ func _physics_process(delta):
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity):
 	velocity = safe_velocity
+	
 	move_and_slide()
 
 func _on_bullet_detection_body_entered(body):
-	print(body)
-	print(body.is_in_group("Bullet"))
+	
 	if body.is_in_group("Bullet"):
+		if body.has_meta("Damage") != true:
+			return
 		
-		health += 20
+		var Damage = body.get_meta("Damage")
+		health += Damage
 		
 		if health >= 100:
 			queue_free()
