@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://csydop42wh4no" path="res://Assets/Characters/4.png" id="4_h307k"]
 [ext_resource type="Texture2D" uid="uid://cc1fcrx3h6rs1" path="res://Assets/Characters/5.png" id="5_yqvfj"]
 [ext_resource type="Texture2D" uid="uid://cv4yy33udpxt3" path="res://Assets/Weapons/MagicWand/MagicWand.png" id="6_um2o2"]
-[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/ak47.png" id="7_n3f5p"]
+[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/Ak47.png" id="7_n3f5p"]
 [ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/pumpgun.png" id="8_41jsb"]
 [ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullet/WeaponBulletPosition.tscn" id="9_p6cgv"]
 
@@ -1217,7 +1217,7 @@ volume_db = -10.0
 [node name="EmptySound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 72
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.833351, 7.91666)

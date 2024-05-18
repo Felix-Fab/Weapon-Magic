@@ -4,7 +4,7 @@ var WeaponDetails = [
 	{
 		'Name': 'MagicWand',
 		'ShootTime': 0.25,
-		'ReloadTime': 1,
+		'ReloadTime': 1.2,
 		'Magazin': 20,
 		'BulletSpeed': 1000,
 		'MaxRecoil': 10.0,

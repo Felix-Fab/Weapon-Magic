@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ajq0t3q1u41"
-path="res://.godot/imported/Ak47.png-f2d218047dde47e1ec263fe289e0d76d.ctex"
+uid="uid://b1pyai8wkb1gb"
+path="res://.godot/imported/map_65.png-70a691e203c5d8ca7362a9ead76236dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Ak47/Ak47.png"
-dest_files=["res://.godot/imported/Ak47.png-f2d218047dde47e1ec263fe289e0d76d.ctex"]
+source_file="res://Assets/Tiles/UI/map_65.png"
+dest_files=["res://.godot/imported/map_65.png-70a691e203c5d8ca7362a9ead76236dd.ctex"]
 
 [params]
 

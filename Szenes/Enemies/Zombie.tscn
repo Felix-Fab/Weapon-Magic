@@ -1,12 +1,11 @@
-[gd_scene load_steps=48 format=3 uid="uid://by4fouc5oipyj"]
+[gd_scene load_steps=47 format=3 uid="uid://by4fouc5oipyj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Zombie.gd" id="1_4sb8i"]
 [ext_resource type="Texture2D" uid="uid://bukulcp8vk5ko" path="res://Assets/Enemies/Zombie/Zombie_Walk.png" id="2_1jfys"]
 [ext_resource type="Texture2D" uid="uid://bh7x3hwm3t0it" path="res://Assets/Tiles/UI/HealthBackground.png" id="3_ew0av"]
 [ext_resource type="Texture2D" uid="uid://c5hi8seu47mcc" path="res://Assets/Tiles/UI/HealthForeground.png" id="4_nn0ui"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq1iy"]
-size = Vector2(31, 49)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2bj0l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elbol"]
 atlas = ExtResource("2_1jfys")
@@ -311,18 +310,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2bj0l"]
-
 [node name="Zombie" type="CharacterBody2D" groups=["BulletWall"]]
 collision_layer = 128
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4sb8i")
+metadata/Health = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 5)
-shape = SubResource("RectangleShape2D_yq1iy")
+position = Vector2(-2, 3)
+scale = Vector2(1.16, 1.54006)
+shape = SubResource("CapsuleShape2D_2bj0l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.7, 1.7)
@@ -340,6 +339,7 @@ autostart = true
 avoidance_enabled = true
 
 [node name="Healthbar" type="TextureProgressBar" parent="."]
+visible = false
 offset_left = -11.0
 offset_top = -23.0
 offset_right = 7.0
@@ -354,6 +354,7 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDetection"]
+visible = false
 position = Vector2(-2, 3)
 scale = Vector2(1.16, 1.54006)
 shape = SubResource("CapsuleShape2D_2bj0l")

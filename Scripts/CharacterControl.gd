@@ -21,10 +21,16 @@ var MaxRecoil = WeaponDetails.MaxRecoil
 @onready var EmptySound = $EmptySound
 @onready var WeaponMagazine = get_parent().get_node("Ui/Panel")
 
+@onready var PlayerAnimation = $PlayerAnimation
+@onready var WeaponAnimation = $WeaponAnimation
+
 @onready var Tilemap = get_parent().get_node("TileMap")
 @onready var Camera = $Camera2D
 
 func _ready():
+	PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_" + CurrentAnimation)
+	WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_" + CurrentAnimation)
+	
 	WeaponCountdown.wait_time = WeaponDetails.ShootTime
 	WeaponReloadControl.wait_time = WeaponDetails.ReloadTime
 	
@@ -69,14 +75,22 @@ func _on_weapon_reload_timeout():
 func shoot():
 	if Magazin > 0:
 		var bullet_instance = bullet.instantiate()
-			
+		
 		bullet_instance.position = $WeaponBulletPosition.get_node(str(Game.WeaponSelect) + "/" + CurrentAnimation).global_position
 			
 		var InputVector = Input.get_vector("A", "D", "W", "S")
 			
 		if InputVector.length() == 0:
-			InputVector += Vector2(0, 1)
+			var BulletVector = Vector2(0,1)
+			if CurrentAnimation == "Walk_Top":
+				BulletVector = Vector2(0, -1)
+			elif  CurrentAnimation == "Walk_Right":
+				BulletVector = Vector2(1, 0)
+			elif  CurrentAnimation == "Walk_Left":
+				BulletVector = Vector2(-1, 0)
 			
+			InputVector = BulletVector
+		
 		var ImpulseVector = InputVector * WeaponDetails.BulletSpeed
 		
 		# Calculate Recoil
@@ -88,7 +102,7 @@ func shoot():
 		
 		ImpulseVector = ImpulseVector.rotated(recoil_radians_actual)
 		
-		bullet_instance.get_node("Sprite2D").rotate(ImpulseVector.angle())
+		bullet_instance.rotate(ImpulseVector.angle())
 		bullet_instance.apply_impulse(ImpulseVector, Vector2())
 		get_tree().get_root().add_child(bullet_instance)
 		
@@ -106,35 +120,16 @@ func get_input():
 	var input_direction = Input.get_vector("A", "D", "W", "S")
 	velocity = input_direction * SPEED
 	
-	if(Input.is_action_pressed("S")):
-		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Down")
-		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Down")
+	if velocity.length() == 0:
+		PlayerAnimation.stop()
+		WeaponAnimation.stop()
+	else:
+		var direction = "Down"
+		if velocity.x < 0: direction = "Left"
+		elif velocity.x > 0: direction = "Right"
+		elif velocity.y < 0: direction = "Top"
 		
-		CurrentAnimation = "Walk_Down"
-		return
+		PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_" + direction)
+		WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_" + direction)
 		
-	if(Input.is_action_pressed("W")):
-		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Top")
-		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Top")
-		
-		CurrentAnimation = "Walk_Top"
-		return
-	
-	if(Input.is_action_pressed("D")):
-		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Right")
-		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Right")
-		
-		CurrentAnimation = "Walk_Right"
-		return
-		
-	if(Input.is_action_pressed("A")):
-		$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Walk_Left")
-		$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_Left")
-		
-		CurrentAnimation = "Walk_Left"
-		return
-	
-	$PlayerAnimation.play("Player" + str(Game.PlayerSelect) + "_Idle")
-	$WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Idle")
-	
-	CurrentAnimation = "Idle"
+		CurrentAnimation = "Walk_" + direction

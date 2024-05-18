@@ -31,10 +31,13 @@ func _on_bullet_detection_body_entered(body):
 		if body.has_meta("Damage") != true:
 			return
 		
+		if(health == 0):
+			$Healthbar.visible = true
+		
 		var Damage = body.get_meta("Damage")
 		health += Damage
 		
-		if health >= 100:
+		if health >= self.get_meta("Health"):
 			queue_free()
 		else:
 			$Healthbar.value = health
