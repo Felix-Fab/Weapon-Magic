@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ajq0t3q1u41"
-path="res://.godot/imported/Ak47.png-f2d218047dde47e1ec263fe289e0d76d.ctex"
+uid="uid://dbr1u7shpl85l"
+path="res://.godot/imported/NightBorne.png-93eef1205cf242260b2498c4b3c25371.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Ak47/Ak47.png"
-dest_files=["res://.godot/imported/Ak47.png-f2d218047dde47e1ec263fe289e0d76d.ctex"]
+source_file="res://Assets/Enemies/NightBorne/NightBorne.png"
+dest_files=["res://.godot/imported/NightBorne.png-93eef1205cf242260b2498c4b3c25371.ctex"]
 
 [params]
 

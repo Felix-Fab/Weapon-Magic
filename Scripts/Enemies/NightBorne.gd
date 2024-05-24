@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var movement_speed: float = 100.0
+var movement_speed: float = 160.0
 var accel = 4
 var health = 0
 
@@ -18,7 +18,7 @@ func _physics_process(delta):
 	var direction = (navigation_agent.get_next_path_position() - global_position).normalized()
 	
 	navigation_agent.set_velocity(direction * movement_speed)
-	
+		
 	if velocity.x > 0:
 		$AnimatedSprite2D.set_flip_h(false)
 	else:

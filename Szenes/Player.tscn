@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://csydop42wh4no" path="res://Assets/Characters/4.png" id="4_h307k"]
 [ext_resource type="Texture2D" uid="uid://cc1fcrx3h6rs1" path="res://Assets/Characters/5.png" id="5_yqvfj"]
 [ext_resource type="Texture2D" uid="uid://cv4yy33udpxt3" path="res://Assets/Weapons/MagicWand/MagicWand.png" id="6_um2o2"]
-[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/ak47.png" id="7_n3f5p"]
-[ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/pumpgun.png" id="8_41jsb"]
+[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/Ak47.png" id="7_n3f5p"]
+[ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/Pumpgun.png" id="8_41jsb"]
 [ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullet/WeaponBulletPosition.tscn" id="9_p6cgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijk40"]
@@ -1188,7 +1188,7 @@ shape = SubResource("RectangleShape2D_ijk40")
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qisp4")
-animation = &"Player4_Idle"
+animation = &"Player5_Idle"
 
 [node name="WeaponAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_374sa")

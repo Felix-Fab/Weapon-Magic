@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6iidx1y7e3l7"
-path="res://.godot/imported/pumpgun.png-d256f5b6f54d91fa8de6fb89ab97f8f8.ctex"
+path="res://.godot/imported/Pumpgun.png-08b20dd68408fa4dec0801c975fefaa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Pumpgun/pumpgun.png"
-dest_files=["res://.godot/imported/pumpgun.png-d256f5b6f54d91fa8de6fb89ab97f8f8.ctex"]
+source_file="res://Assets/Weapons/Pumpgun/Pumpgun.png"
+dest_files=["res://.godot/imported/Pumpgun.png-08b20dd68408fa4dec0801c975fefaa2.ctex"]
 
 [params]
 

@@ -1,0 +1,165 @@
+[gd_scene load_steps=18 format=3 uid="uid://bxevdvsd3iibg"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/NightBorne.gd" id="1_gtyx7"]
+[ext_resource type="Texture2D" uid="uid://dbr1u7shpl85l" path="res://Assets/Enemies/NightBorne/NightBorne.png" id="2_3vtr6"]
+[ext_resource type="Texture2D" uid="uid://bh7x3hwm3t0it" path="res://Assets/Tiles/UI/HealthBackground.png" id="3_w5n5b"]
+[ext_resource type="Texture2D" uid="uid://c5hi8seu47mcc" path="res://Assets/Tiles/UI/HealthForeground.png" id="4_0jrgx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2bj0l"]
+radius = 16.2279
+height = 50.3221
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ifed"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(640, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gctnd"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(720, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5gp"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(800, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5r8h"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(880, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkj3t"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vge5e"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vet3j"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo5hk"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(240, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8ae0"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(320, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvxmh"]
+atlas = ExtResource("2_3vtr6")
+region = Rect2(400, 80, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msbx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ifed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gctnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5r8h")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkj3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vge5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vet3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo5hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8ae0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvxmh")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w44ql"]
+radius = 28.0
+
+[node name="NightBorne" type="CharacterBody2D" groups=["BulletWall"]]
+collision_layer = 128
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_gtyx7")
+metadata/Health = 50
+metadata/Damage = 15
+metadata/Coins = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 5)
+scale = Vector2(-1.17082, -0.914112)
+shape = SubResource("CapsuleShape2D_2bj0l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, -6)
+scale = Vector2(1.4, 1.432)
+sprite_frames = SubResource("SpriteFrames_msbx5")
+animation = &"Walk"
+frame_progress = 0.729652
+
+[node name="Navigation" type="Node2D" parent="."]
+
+[node name="RecalculateTimer" type="Timer" parent="Navigation"]
+wait_time = 0.1
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Navigation"]
+avoidance_enabled = true
+
+[node name="Healthbar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -11.0
+offset_top = -23.0
+offset_right = 7.0
+offset_bottom = -21.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("3_w5n5b")
+texture_progress = ExtResource("4_0jrgx")
+
+[node name="BulletDetection" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDetection"]
+visible = false
+position = Vector2(-2, 3)
+scale = Vector2(1.16, 1.54006)
+shape = SubResource("CapsuleShape2D_2bj0l")
+
+[node name="HitDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetection"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_w44ql")
+
+[node name="HitCooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Navigation/RecalculateTimer" to="." method="_on_recalculate_timer_timeout"]
+[connection signal="velocity_computed" from="Navigation/NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="body_entered" from="BulletDetection" to="." method="_on_bullet_detection_body_entered"]
+[connection signal="body_entered" from="HitDetection" to="." method="_on_hit_detection_body_entered"]
+[connection signal="body_exited" from="HitDetection" to="." method="_on_hit_detection_body_exited"]
+[connection signal="timeout" from="HitCooldown" to="." method="_on_hit_cooldown_timeout"]
