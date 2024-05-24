@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ajq0t3q1u41"
-path="res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"
+uid="uid://dw67f4gljbsu4"
+path="res://.godot/imported/ManaProgress.png-93ec8a6ebc0a79f92af2f5c4bcf32802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Ak47/ak47.png"
-dest_files=["res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"]
+source_file="res://Assets/Tiles/UI/Health/ManaProgress.png"
+dest_files=["res://.godot/imported/ManaProgress.png-93ec8a6ebc0a79f92af2f5c4bcf32802.ctex"]
 
 [params]
 

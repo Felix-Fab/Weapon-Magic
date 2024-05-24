@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ajq0t3q1u41"
-path="res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"
+uid="uid://bx2lkkdcjw8y5"
+path="res://.godot/imported/lightning.png-2ee28d263aab306aa7b1702825d200e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Ak47/ak47.png"
-dest_files=["res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"]
+source_file="res://Assets/Weapons/lightning/lightning.png"
+dest_files=["res://.godot/imported/lightning.png-2ee28d263aab306aa7b1702825d200e2.ctex"]
 
 [params]
 

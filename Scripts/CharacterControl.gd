@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var Health = 100
+var Mana = 100
+var Coins = 0
+
 var WeaponDetails = Weapons.WeaponDetails[Game.WeaponSelect - 1]
 
 var CurrentAnimation = "Idle"
@@ -19,7 +23,7 @@ var MaxRecoil = WeaponDetails.MaxRecoil
 @onready var ShootSound = $ShootSound
 @onready var ReloadSound = $ReloadSound
 @onready var EmptySound = $EmptySound
-@onready var WeaponMagazine = get_parent().get_node("Ui/Panel")
+@export var UI: CanvasLayer
 
 @onready var PlayerAnimation = $PlayerAnimation
 @onready var WeaponAnimation = $WeaponAnimation
@@ -55,7 +59,8 @@ func _process(delta):
 		shoot()
 		
 	if Input.is_action_pressed("weapon_reload") && !WeaponReload:
-		WeaponMagazine.reload()
+		UI.get_node('Weapon').reload()
+		
 		
 		ReloadSound.play()
 		
@@ -69,7 +74,7 @@ func _on_weapon_countdown_timeout():
 func _on_weapon_reload_timeout():
 	Magazin = Weapons.WeaponDetails[Game.WeaponSelect - 1].Magazin
 	
-	WeaponMagazine.stopReload(Magazin)
+	UI.get_node('Weapon').stopReload(Magazin)
 	WeaponReload = false
 
 func shoot():
@@ -104,13 +109,16 @@ func shoot():
 		
 		bullet_instance.rotate(ImpulseVector.angle())
 		bullet_instance.apply_impulse(ImpulseVector, Vector2())
+		
+		bullet_instance.set_meta("PlayerPath", self.get_path())
+		
 		get_tree().get_root().add_child(bullet_instance)
 		
 		ShootSound.play()
 		
 		Magazin -= 1
+		UI.get_node('Weapon').shoot(Magazin)
 		
-		WeaponMagazine.shoot(Magazin)
 		Shootable = false
 		WeaponCountdown.start()
 	else:
@@ -133,3 +141,16 @@ func get_input():
 		WeaponAnimation.play("Weapon" + str(Game.WeaponSelect) + "_Walk_" + direction)
 		
 		CurrentAnimation = "Walk_" + direction
+		
+func Hit(Damage):
+	Health -= Damage
+	
+	if(Health <= 0):
+		get_tree().change_scene_to_file("res://Szenes/Pages/CharacterSelection.tscn")
+	
+	UI.setHealth(Health)
+	UI.showDamageEffect(false)
+	
+func Kill(NewCoins):
+	Coins += NewCoins
+	UI.setCoins(Coins)

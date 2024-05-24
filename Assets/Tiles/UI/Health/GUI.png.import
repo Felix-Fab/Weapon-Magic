@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ajq0t3q1u41"
-path="res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"
+uid="uid://da56lbhr67csw"
+path="res://.godot/imported/GUI.png-895c8eb5eb1f3d8ec516cca8abc0e88c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Weapons/Ak47/ak47.png"
-dest_files=["res://.godot/imported/ak47.png-805ec12a49faf1bd59c8dd6784bbcc67.ctex"]
+source_file="res://Assets/Tiles/UI/Health/GUI.png"
+dest_files=["res://.godot/imported/GUI.png-895c8eb5eb1f3d8ec516cca8abc0e88c.ctex"]
 
 [params]
 

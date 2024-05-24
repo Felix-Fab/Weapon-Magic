@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://by4fouc5oipyj"]
+[gd_scene load_steps=48 format=3 uid="uid://by4fouc5oipyj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Zombie.gd" id="1_4sb8i"]
 [ext_resource type="Texture2D" uid="uid://bukulcp8vk5ko" path="res://Assets/Enemies/Zombie/Zombie_Walk.png" id="2_1jfys"]
@@ -310,6 +310,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_w44ql"]
+radius = 32.1542
+
 [node name="Zombie" type="CharacterBody2D" groups=["BulletWall"]]
 collision_layer = 128
 collision_mask = 0
@@ -317,6 +320,8 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4sb8i")
 metadata/Health = 100
+metadata/Damage = 10
+metadata/Coins = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 3)
@@ -359,6 +364,19 @@ position = Vector2(-2, 3)
 scale = Vector2(1.16, 1.54006)
 shape = SubResource("CapsuleShape2D_2bj0l")
 
+[node name="HitDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetection"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_w44ql")
+
+[node name="HitCooldown" type="Timer" parent="."]
+
 [connection signal="timeout" from="Navigation/RecalculateTimer" to="." method="_on_recalculate_timer_timeout"]
 [connection signal="velocity_computed" from="Navigation/NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="body_entered" from="BulletDetection" to="." method="_on_bullet_detection_body_entered"]
+[connection signal="body_entered" from="HitDetection" to="." method="_on_hit_detection_body_entered"]
+[connection signal="body_exited" from="HitDetection" to="." method="_on_hit_detection_body_exited"]
+[connection signal="timeout" from="HitCooldown" to="." method="_on_hit_cooldown_timeout"]

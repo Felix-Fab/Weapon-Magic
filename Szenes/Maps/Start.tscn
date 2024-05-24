@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bsuvoy4wusj87"]
+[gd_scene load_steps=18 format=3 uid="uid://bsuvoy4wusj87"]
 
 [ext_resource type="Script" path="res://Scripts/Maps/Start.gd" id="1_y306y"]
 [ext_resource type="Texture2D" uid="uid://cmbirboc1mot1" path="res://Assets/Tiles/TX Tileset Grass.png" id="2_4nlbp"]
 [ext_resource type="Texture2D" uid="uid://dj7ylf2yf1qvl" path="res://Assets/Tiles/TX Struct.png" id="3_886fw"]
 [ext_resource type="Texture2D" uid="uid://bsdvawxy4fiyp" path="res://Assets/Tiles/TX Tileset Wall.png" id="4_mx0ws"]
 [ext_resource type="Texture2D" uid="uid://qwkskhkwubht" path="res://Assets/Tiles/TX Props.png" id="5_ijj5y"]
+[ext_resource type="PackedScene" uid="uid://by4fouc5oipyj" path="res://Szenes/Enemies/Zombie.tscn" id="8_nup64"]
 [ext_resource type="PackedScene" uid="uid://dpq1a3gus0vh5" path="res://Szenes/UI/UI.tscn" id="8_xfj2u"]
 [ext_resource type="PackedScene" uid="uid://bhuen28o5mw6l" path="res://Szenes/Player.tscn" id="18_ycv7y"]
 
@@ -3425,9 +3426,10 @@ layer_1/tile_data = PackedInt32Array(262165, 1376260, 6, 327701, 1376260, 7, 393
 layer_2/name = "Foreground"
 layer_2/tile_data = PackedInt32Array(65537, 1441797, 17, 131073, 1441797, 18, 196609, 1441797, 19, 262145, 1441797, 20, 65538, 1507333, 17, 131074, 1507333, 18, 196610, 1507333, 19, 262146, 1507333, 20, 327682, 1507333, 21, 65539, 1572869, 17, 131075, 1572869, 18, 196611, 1572869, 19, 262147, 1572869, 20, 327683, 1572869, 21, 65540, 1638405, 17, 131076, 1638405, 18, 196612, 1638405, 19, 262148, 1638405, 20, 327684, 1638405, 21, 65541, 1703941, 17, 131077, 1703941, 18, 196613, 1703941, 19, 262149, 1703941, 20, 327685, 1703941, 21, 65542, 1769477, 17, 131078, 1769477, 18, 196614, 1769477, 19, 262150, 1769477, 20, 10, 1179653, 1, 65546, 1179653, 2, 131082, 1179653, 3, 11, 1245189, 1, 65547, 1245189, 2, 131083, 1245189, 3, 12, 1310725, 1, 65548, 1310725, 2, 131084, 1310725, 3, 13, 1376261, 1, 65549, 1376261, 2, 131085, 1376261, 3, -655328, 1179653, 1, -589792, 1179653, 2, -524256, 1179653, 3, -655327, 1245189, 1, -589791, 1245189, 2, -524255, 1245189, 3, -655326, 1310725, 1, -589790, 1310725, 2, -524254, 1310725, 3, -655325, 1376261, 1, -589789, 1376261, 2, -524253, 1376261, 3, -655323, 1179653, 1, -589787, 1179653, 2, -524251, 1179653, 3, -655322, 1245189, 1, -589786, 1245189, 2, -524250, 1245189, 3, -655321, 1310725, 1, -589785, 1310725, 2, -524249, 1310725, 3, -655320, 1376261, 1, -589784, 1376261, 2, -524248, 1376261, 3, -655318, 1179653, 1, -589782, 1179653, 2, -524246, 1179653, 3, -655317, 1245189, 1, -589781, 1245189, 2, -524245, 1245189, 3, -655316, 1310725, 1, -589780, 1310725, 2, -524244, 1310725, 3, -655315, 1376261, 1, -589779, 1376261, 2, -524243, 1376261, 3, 1507362, 1179653, 1, 1572898, 1179653, 2, 1638434, 1179653, 3, 1507363, 1245189, 1, 1572899, 1245189, 2, 1638435, 1245189, 3, 1507364, 1310725, 1, 1572900, 1310725, 2, 1638436, 1310725, 3, 1507365, 1376261, 1, 1572901, 1376261, 2, 1638437, 1376261, 3, 1507367, 1179653, 1, 1572903, 1179653, 2, 1638439, 1179653, 3, 1507368, 1245189, 1, 1572904, 1245189, 2, 1638440, 1245189, 3, 1507369, 1310725, 1, 1572905, 1310725, 2, 1638441, 1310725, 3, 1507370, 1376261, 1, 1572906, 1376261, 2, 1638442, 1376261, 3)
 
-[node name="Player" parent="." instance=ExtResource("18_ycv7y")]
+[node name="Player" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("18_ycv7y")]
 position = Vector2(81, 23)
 input_pickable = true
+UI = NodePath("../Ui")
 
 [node name="Height1" type="Area2D" parent="."]
 visible = false
@@ -3443,6 +3445,14 @@ position = Vector2(-3, -19)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Height2"]
 polygon = PackedVector2Array(0, 291, 83, 292, 83, 325, 164, 324, 166, 290, 290, 291, 290, 324, 375, 324, 375, 290, 457, 291, 458, 458, 0, 457)
+
+[node name="Zombie" parent="." node_paths=PackedStringArray("momenet_target") instance=ExtResource("8_nup64")]
+position = Vector2(1276.38, 506.381)
+momenet_target = NodePath("../Player")
+
+[node name="Zombie2" parent="." node_paths=PackedStringArray("momenet_target") instance=ExtResource("8_nup64")]
+position = Vector2(1287.38, 142.866)
+momenet_target = NodePath("../Player")
 
 [connection signal="area_entered" from="Height1" to="." method="_on_height_1_area_entered"]
 [connection signal="body_entered" from="Height1" to="." method="_on_height_1_body_entered"]

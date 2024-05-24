@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://bhuen28o5mw6l"]
+[gd_scene load_steps=150 format=3 uid="uid://bhuen28o5mw6l"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterControl.gd" id="1_rubmr"]
 [ext_resource type="Texture2D" uid="uid://cgu8ai41e3ow8" path="res://Assets/Characters/1.png" id="1_u8q1w"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://csydop42wh4no" path="res://Assets/Characters/4.png" id="4_h307k"]
 [ext_resource type="Texture2D" uid="uid://cc1fcrx3h6rs1" path="res://Assets/Characters/5.png" id="5_yqvfj"]
 [ext_resource type="Texture2D" uid="uid://cv4yy33udpxt3" path="res://Assets/Weapons/MagicWand/MagicWand.png" id="6_um2o2"]
-[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/Ak47.png" id="7_n3f5p"]
+[ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/ak47.png" id="7_n3f5p"]
 [ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/pumpgun.png" id="8_41jsb"]
 [ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullet/WeaponBulletPosition.tscn" id="9_p6cgv"]
 
@@ -217,10 +217,6 @@ region = Rect2(96, 192, 48, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxv20"]
 atlas = ExtResource("3_upnup")
 region = Rect2(144, 192, 48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0f81"]
-atlas = ExtResource("4_h307k")
-region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1hdd"]
 atlas = ExtResource("4_h307k")
@@ -584,10 +580,7 @@ animations = [{
 "name": &"Player3_Walk_Top",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m0f81")
-}],
+"frames": [],
 "loop": true,
 "name": &"Player4_Idle",
 "speed": 5.0
@@ -1175,8 +1168,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5uyl"]
 size = Vector2(25, 44.1667)
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 13
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 45
 script = ExtResource("1_rubmr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
