@@ -8,13 +8,13 @@ var Hitable = false
 
 var PlayerBody: Node2D
 
-@export var momenet_target: Node2D
+@export var MovementTarget: Node2D
 @onready var navigation_agent = $Navigation/NavigationAgent2D
 @onready var HitCooldown = $HitCooldown
 	
 func _physics_process(delta):
 	
-	navigation_agent.target_position = momenet_target.global_position
+	navigation_agent.target_position = MovementTarget.global_position
 	var direction = (navigation_agent.get_next_path_position() - global_position).normalized()
 	
 	navigation_agent.set_velocity(direction * movement_speed)
@@ -45,7 +45,11 @@ func _on_bullet_detection_body_entered(body):
 		health += Damage
 		
 		if health >= self.get_meta("Health"):
-			queue_free()		
+			queue_free()
+			body.queue_free()
+			
+			get_parent().enemyKilled("Zombie")
+			
 			get_node(body.get_meta("PlayerPath")).Kill(self.get_meta("Coins"))
 		else:
 			$Healthbar.value = health

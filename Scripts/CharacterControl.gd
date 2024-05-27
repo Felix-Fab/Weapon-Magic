@@ -45,6 +45,9 @@ func _ready():
 	var tilemap_rect = Tilemap.get_used_rect()
 	var tilemap_cell_size = Tilemap.tile_set.tile_size
 	
+	print(tilemap_rect)
+	print(tilemap_rect.position.y * tilemap_cell_size.y * Tilemap.scale.y)
+	
 	Camera.set_limit(SIDE_LEFT, tilemap_rect.position.x * tilemap_cell_size.x * Tilemap.scale.x)
 	Camera.set_limit(SIDE_RIGHT, tilemap_rect.end.x * tilemap_cell_size.x * Tilemap.scale.x)
 	Camera.set_limit(SIDE_TOP, tilemap_rect.position.y * tilemap_cell_size.y * Tilemap.scale.y)

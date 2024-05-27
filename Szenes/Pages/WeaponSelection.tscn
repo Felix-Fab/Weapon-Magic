@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://db2snd8qv16mh"]
+[gd_scene load_steps=20 format=3 uid="uid://db2snd8qv16mh"]
 
 [ext_resource type="Script" path="res://Scripts/Pages/WeaponSelection.gd" id="1_7d3tu"]
 [ext_resource type="Texture2D" uid="uid://bnxavulveq3s7" path="res://Assets/Selections/SelectionBackground.jpg" id="2_4bayq"]
+[ext_resource type="Texture2D" uid="uid://isvp0renddkg" path="res://Assets/Weapons/Pumpgun/Model.png" id="5_elteh"]
 [ext_resource type="Texture2D" uid="uid://cuxjt3togmjxc" path="res://Assets/Weapons/Skills/Spells/fire_spell.png" id="5_ohg11"]
 [ext_resource type="Texture2D" uid="uid://beoc17h154l45" path="res://Assets/Weapons/Skills/Spells/mana_replenish.png" id="6_cqolp"]
 [ext_resource type="Texture2D" uid="uid://bywm8ugx323pk" path="res://Assets/Weapons/Skills/Spells/lightning_spell.png" id="7_tjfkq"]
@@ -30,6 +31,10 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("9_uak8l")
 region = Rect2(0, 0, 32, 17)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wlhq"]
+atlas = ExtResource("5_elteh")
+region = Rect2(0, 0, 32, 9)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_lyaat"]
 animations = [{
 "frames": [{
@@ -48,7 +53,10 @@ animations = [{
 "name": &"Weapon2",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wlhq")
+}],
 "loop": true,
 "name": &"Weapon3",
 "speed": 5.0
@@ -83,6 +91,7 @@ texture = ExtResource("2_4bayq")
 expand_mode = 1
 
 [node name="Next" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1037.0
 offset_top = 51.0
 offset_right = 1119.0
@@ -129,9 +138,10 @@ anchors_preset = 0
 position = Vector2(564, 204)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_lyaat")
-animation = &"Weapon1"
+animation = &"Weapon3"
 
 [node name="WeaponLeftButton" type="Button" parent="WeaponSelect"]
+layout_mode = 0
 offset_left = 427.0
 offset_top = 185.0
 offset_right = 483.0
@@ -141,6 +151,7 @@ action_mode = 0
 text = "Left"
 
 [node name="WeaponRightButton" type="Button" parent="WeaponSelect"]
+layout_mode = 0
 offset_left = 653.0
 offset_top = 186.0
 offset_right = 709.0

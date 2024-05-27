@@ -20,5 +20,15 @@ var WeaponDetails = [
 		'MaxRecoil': 20.0,
 		'IconScale': 1.5,
 		'Damage': 20
+	},
+	{
+		'Name': 'Pumpgun',
+		'ShootTime': 0.7,
+		'ReloadTime': 3.5,
+		'Magazin': 5,
+		'BulletSpeed': 400,
+		'MaxRecoil': 15.0,
+		'IconScale': 1.5,
+		'Damage': 50
 	}
 ]

@@ -112,6 +112,7 @@ sprite_frames = SubResource("SpriteFrames_mlytk")
 animation = &"Player5"
 
 [node name="LeftButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 392.0
 offset_top = 303.0
 offset_right = 448.0
@@ -120,6 +121,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1fkpd")
 text = "Left"
 
 [node name="RightButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 718.0
 offset_top = 307.0
 offset_right = 774.0
@@ -128,6 +130,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0iycg")
 text = "Right"
 
 [node name="Next" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1037.0
 offset_top = 51.0
 offset_right = 1119.0

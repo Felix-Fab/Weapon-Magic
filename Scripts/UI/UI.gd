@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var CharacterImage = $Character/CharacterImage
 @onready var DamageEffekt = $DamageEffect
 @onready var DamageEffektTimer = $DamageEffect/Timer
+@onready var WaveMessage = $WaveMessage
 
 func _ready():
 	HealthProgess.value = 100
@@ -44,3 +45,21 @@ func _on_timer_timeout():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Fade_Out":
 		DamageEffekt.hide()
+		
+func ShowWaveInfo(Message):
+	WaveMessage.get_node("WaveInfo").text = Message
+	WaveMessage.get_node("WaveInfo").show()
+	
+	WaveMessage.get_node("InfoTimer").start()
+	
+func SetPauseInfo(Message):
+	WaveMessage.get_node("WaveCountdown").text = Message
+	
+func ShowPauseInfo():
+	WaveMessage.get_node("WaveCountdown").show()
+	
+func HidePauseInfo():
+	WaveMessage.get_node("WaveCountdown").hide()
+
+func _on_info_timer_timeout():
+	WaveMessage.get_node("WaveInfo").hide()

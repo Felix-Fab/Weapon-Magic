@@ -1183,16 +1183,17 @@ drag_vertical_enabled = true
 editor_draw_limits = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.833336, 7.91667)
 shape = SubResource("RectangleShape2D_ijk40")
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qisp4")
-animation = &"Player5_Idle"
+animation = &"Player5_Walk_Down"
 
 [node name="WeaponAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_374sa")
-animation = &"Weapon3_Walk_Top"
+animation = &"Weapon3_Walk_Down"
 
 [node name="WeaponCountdown" type="Timer" parent="."]
 wait_time = 0.25
@@ -1210,6 +1211,7 @@ volume_db = -10.0
 [node name="EmptySound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 72
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
