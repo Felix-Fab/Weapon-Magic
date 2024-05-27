@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkvx1fpbobywr"]
+
+[ext_resource type="Script" path="res://Scripts/Pages/MapSelection.gd" id="1_x36i2"]
+[ext_resource type="Texture2D" uid="uid://bnxavulveq3s7" path="res://Assets/Selections/SelectionBackground.jpg" id="2_mks8y"]
+[ext_resource type="Texture2D" uid="uid://ilq0wejqp4yu" path="res://Assets/Maps/Church/Selection.png" id="3_omddg"]
+[ext_resource type="Texture2D" uid="uid://cshld7vaq5l7m" path="res://Assets/Maps/Dungeon/Selection.png" id="4_o056c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6yvkf"]
+font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nf40"]
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MapSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_x36i2")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324.25)
+scale = Vector2(0.192, 0.107917)
+texture = ExtResource("2_mks8y")
+
+[node name="MapsSelect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+
+[node name="MapContainer" type="GridContainer" parent="MapsSelect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -50.0
+offset_right = 170.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="Map1" type="Button" parent="MapsSelect/MapContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="MapsSelect/MapContainer/Map1"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 97.0
+offset_bottom = 96.0
+texture = ExtResource("3_omddg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Map2" type="Button" parent="MapsSelect/MapContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="MapsSelect/MapContainer/Map2"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 97.0
+offset_bottom = 96.0
+texture = ExtResource("4_o056c")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Map3" type="Button" parent="MapsSelect/MapContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="MapsSelect/MapContainer/Map3"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 97.0
+offset_bottom = 96.0
+texture = ExtResource("3_omddg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 459.0
+offset_top = 39.0
+offset_right = 690.0
+offset_bottom = 88.0
+grow_vertical = 2
+size_flags_horizontal = 6
+text = "Map Auswahl"
+label_settings = SubResource("LabelSettings_6yvkf")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1037.0
+offset_top = 51.0
+offset_right = 1119.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0nf40")
+action_mode = 0
+text = "Play"
+
+[connection signal="focus_entered" from="MapsSelect/MapContainer/Map1" to="." method="_on_map_1_focus_entered"]
+[connection signal="focus_entered" from="MapsSelect/MapContainer/Map2" to="." method="_on_map_2_focus_entered"]
+[connection signal="focus_entered" from="MapsSelect/MapContainer/Map3" to="." method="_on_map_3_focus_entered"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

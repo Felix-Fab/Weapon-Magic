@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj5qxfjgto4pf"]
+[gd_scene load_steps=18 format=3 uid="uid://dj5qxfjgto4pf"]
 
 [ext_resource type="Texture2D" uid="uid://cgu8ai41e3ow8" path="res://Assets/Characters/1.png" id="2_4fqkp"]
-[ext_resource type="Texture2D" uid="uid://c47cuam2d0bxh" path="res://Assets/CharacterSelection/Background.png" id="2_8kosp"]
-[ext_resource type="Script" path="res://Scripts/Pages/PlayerSelect.gd" id="2_d74b4"]
+[ext_resource type="Script" path="res://Scripts/Pages/CharacterSelection.gd" id="2_d74b4"]
+[ext_resource type="Texture2D" uid="uid://bnxavulveq3s7" path="res://Assets/Selections/SelectionBackground.jpg" id="2_jnme6"]
 [ext_resource type="Texture2D" uid="uid://dy3fie4sxofiu" path="res://Assets/Characters/2.png" id="3_yunbw"]
 [ext_resource type="Texture2D" uid="uid://clfii1rgm7k48" path="res://Assets/Characters/3.png" id="4_atqom"]
 [ext_resource type="Texture2D" uid="uid://csydop42wh4no" path="res://Assets/Characters/4.png" id="5_ml8pn"]
@@ -71,13 +71,39 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterSelection" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fkpd"]
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iycg"]
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bavyq"]
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_c5tpa"]
+font_size = 35
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("2_d74b4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(3.31988, 2.80519)
-texture = ExtResource("2_8kosp")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324.25)
+scale = Vector2(0.192, 0.108)
+texture = ExtResource("2_jnme6")
 
 [node name="PlayerSelect" type="AnimatedSprite2D" parent="."]
 position = Vector2(575, 305)
@@ -90,6 +116,7 @@ offset_left = 392.0
 offset_top = 303.0
 offset_right = 448.0
 offset_bottom = 347.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1fkpd")
 text = "Left"
 
 [node name="RightButton" type="Button" parent="."]
@@ -97,15 +124,32 @@ offset_left = 718.0
 offset_top = 307.0
 offset_right = 774.0
 offset_bottom = 351.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0iycg")
 text = "Right"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 528.0
-offset_top = 455.0
-offset_right = 624.0
-offset_bottom = 491.0
-text = "Play"
+[node name="Next" type="Button" parent="."]
+offset_left = 1037.0
+offset_top = 51.0
+offset_right = 1119.0
+offset_bottom = 82.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_bavyq")
+text = "Next"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 417.0
+offset_top = 42.0
+offset_right = 734.0
+offset_bottom = 91.0
+grow_vertical = 2
+size_flags_horizontal = 6
+text = "Character Auswahl"
+label_settings = SubResource("LabelSettings_c5tpa")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_button_pressed"]
