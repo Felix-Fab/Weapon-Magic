@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dpq1a3gus0vh5"]
+[gd_scene load_steps=34 format=3 uid="uid://dpq1a3gus0vh5"]
 
 [ext_resource type="Texture2D" uid="uid://cq7jmf3tfevka" path="res://Assets/Tiles/UI/Reload/Reload.png" id="1_e3rmg"]
 [ext_resource type="Script" path="res://Scripts/UI/WeaponMagazine.gd" id="1_hu7ly"]
@@ -10,9 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://dw67f4gljbsu4" path="res://Assets/Tiles/UI/Health/ManaProgress.png" id="7_bv8r6"]
 [ext_resource type="FontFile" uid="uid://rx1fwbperk0v" path="res://Fonts/m5x7.ttf" id="8_mhqff"]
 [ext_resource type="Texture2D" uid="uid://cgu8ai41e3ow8" path="res://Assets/Characters/1.png" id="9_l6urg"]
-[ext_resource type="Texture2D" uid="uid://6w77uhumergc" path="res://icon.svg" id="10_t4i74"]
 [ext_resource type="Texture2D" uid="uid://kirimwlkt0hw" path="res://Assets/Tiles/UI/Skills/SkillProgress.png" id="11_1nx72"]
 [ext_resource type="Script" path="res://Scripts/UI/SkillButton.gd" id="11_7gpc7"]
+[ext_resource type="Texture2D" uid="uid://cuxjt3togmjxc" path="res://Assets/Weapons/Skills/Spells/fire_spell.png" id="11_ocfux"]
+[ext_resource type="Texture2D" uid="uid://ds12uppmt780v" path="res://Assets/Weapons/Skills/Spells/fire_spell_2.png" id="14_iahbu"]
+[ext_resource type="Texture2D" uid="uid://dphofqlhmu7ys" path="res://Assets/Weapons/Skills/Buffs/attack_boost.png" id="15_v4csq"]
+[ext_resource type="Texture2D" uid="uid://c4kejt0lffkrg" path="res://Assets/Weapons/Skills/Debuffs/on_fire_(burning).png" id="16_jf7ml"]
 
 [sub_resource type="Theme" id="Theme_befff"]
 
@@ -336,63 +339,282 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Skills" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.989891, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uaucb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Skills"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -20.3832
+offset_top = -66.0
+offset_right = 19.6168
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.989891, 1)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_uaucb")
 
-[node name="TextureButton" type="TextureButton" parent="Skills"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("10_t4i74")
+[node name="TextureButton" type="TextureButton" parent="Skills/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("11_ocfux")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("11_7gpc7")
+shortcutKey = "skill_1"
+shortcutName = "Q"
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Skills/TextureButton"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Skills/HBoxContainer/TextureButton"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 85.0
-offset_bottom = 39.0
-scale = Vector2(0.436067, 0.979598)
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 53.0
 step = 0.05
 fill_mode = 5
 nine_patch_stretch = true
 texture_progress = ExtResource("11_1nx72")
-tint_progress = Color(0.152941, 0.152941, 0.152941, 0.894118)
+tint_progress = Color(0.152941, 0.152941, 0.152941, 0.905882)
 
-[node name="Timer" type="Timer" parent="Skills/TextureButton"]
-wait_time = 1.5
+[node name="Timer" type="Timer" parent="Skills/HBoxContainer/TextureButton"]
+wait_time = 4.0
 one_shot = true
 
-[node name="Time" type="Label" parent="Skills/TextureButton"]
+[node name="Shortcut" type="Label" parent="Skills/HBoxContainer/TextureButton"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
+offset_left = -47.0
+offset_top = -31.0
+offset_right = -9.0
+offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
 horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Time" type="Label" parent="Skills/HBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0204
+offset_top = -31.0
+offset_right = -23.0204
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+vertical_alignment = 2
+
+[node name="TextureButton2" type="TextureButton" parent="Skills/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("14_iahbu")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_7gpc7")
+shortcutKey = "skill_2"
+shortcutName = "E"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Skills/HBoxContainer/TextureButton2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 53.0
+step = 0.05
+fill_mode = 5
+nine_patch_stretch = true
+texture_progress = ExtResource("11_1nx72")
+tint_progress = Color(0.152941, 0.152941, 0.152941, 0.905882)
+
+[node name="Timer" type="Timer" parent="Skills/HBoxContainer/TextureButton2"]
+wait_time = 4.0
+one_shot = true
+
+[node name="Shortcut" type="Label" parent="Skills/HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -31.0
+offset_right = -9.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Time" type="Label" parent="Skills/HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0204
+offset_top = -31.0
+offset_right = -23.0204
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+vertical_alignment = 2
+
+[node name="TextureButton3" type="TextureButton" parent="Skills/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("15_v4csq")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_7gpc7")
+shortcutKey = "skill_3"
+shortcutName = "F"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Skills/HBoxContainer/TextureButton3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 53.0
+step = 0.05
+fill_mode = 5
+nine_patch_stretch = true
+texture_progress = ExtResource("11_1nx72")
+tint_progress = Color(0.152941, 0.152941, 0.152941, 0.905882)
+
+[node name="Timer" type="Timer" parent="Skills/HBoxContainer/TextureButton3"]
+wait_time = 4.0
+one_shot = true
+
+[node name="Shortcut" type="Label" parent="Skills/HBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -31.0
+offset_right = -9.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Time" type="Label" parent="Skills/HBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0204
+offset_top = -31.0
+offset_right = -23.0204
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+vertical_alignment = 2
+
+[node name="TextureButton4" type="TextureButton" parent="Skills/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("16_jf7ml")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_7gpc7")
+shortcutKey = "skill_4"
+shortcutName = "C"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Skills/HBoxContainer/TextureButton4"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 53.0
+step = 0.05
+fill_mode = 5
+nine_patch_stretch = true
+texture_progress = ExtResource("11_1nx72")
+tint_progress = Color(0.152941, 0.152941, 0.152941, 0.905882)
+
+[node name="Timer" type="Timer" parent="Skills/HBoxContainer/TextureButton4"]
+wait_time = 4.0
+one_shot = true
+
+[node name="Shortcut" type="Label" parent="Skills/HBoxContainer/TextureButton4"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -31.0
+offset_right = -9.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Time" type="Label" parent="Skills/HBoxContainer/TextureButton4"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0204
+offset_top = -31.0
+offset_right = -23.0204
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
 vertical_alignment = 2
 
 [connection signal="timeout" from="DamageEffect/Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="DamageEffect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="WaveMessage/InfoTimer" to="." method="_on_info_timer_timeout"]
-[connection signal="pressed" from="Skills/TextureButton" to="Skills/TextureButton" method="_on_pressed"]
-[connection signal="timeout" from="Skills/TextureButton/Timer" to="Skills/TextureButton" method="_on_timer_timeout"]
+[connection signal="pressed" from="Skills/HBoxContainer/TextureButton" to="Skills/HBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="timeout" from="Skills/HBoxContainer/TextureButton/Timer" to="Skills/HBoxContainer/TextureButton" method="_on_timer_timeout"]
+[connection signal="pressed" from="Skills/HBoxContainer/TextureButton2" to="Skills/HBoxContainer/TextureButton2" method="_on_pressed"]
+[connection signal="timeout" from="Skills/HBoxContainer/TextureButton2/Timer" to="Skills/HBoxContainer/TextureButton2" method="_on_timer_timeout"]
+[connection signal="pressed" from="Skills/HBoxContainer/TextureButton3" to="Skills/HBoxContainer/TextureButton3" method="_on_pressed"]
+[connection signal="timeout" from="Skills/HBoxContainer/TextureButton3/Timer" to="Skills/HBoxContainer/TextureButton3" method="_on_timer_timeout"]
+[connection signal="pressed" from="Skills/HBoxContainer/TextureButton4" to="Skills/HBoxContainer/TextureButton4" method="_on_pressed"]
+[connection signal="timeout" from="Skills/HBoxContainer/TextureButton4/Timer" to="Skills/HBoxContainer/TextureButton4" method="_on_timer_timeout"]

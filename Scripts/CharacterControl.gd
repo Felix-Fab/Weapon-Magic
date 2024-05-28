@@ -18,6 +18,11 @@ var WeaponReload = false
 var CurrentRecoil = 0.0
 var MaxRecoil = WeaponDetails.MaxRecoil
 
+@export var Skill1_Key:String
+@export var Skill2_Key:String
+@export var Skill3_Key:String
+@export var Skill4_Key:String
+
 @onready var WeaponCountdown = $WeaponCountdown
 @onready var WeaponReloadControl = $WeaponReload
 @onready var ShootSound = $ShootSound
@@ -63,13 +68,14 @@ func _process(delta):
 		
 	if Input.is_action_pressed("weapon_reload") && !WeaponReload:
 		UI.get_node('Weapon').reload()
-		
-		
 		ReloadSound.play()
-		
+
 		WeaponReload = true
 		
 		WeaponReloadControl.start()
+		
+	if Input.is_action_just_pressed(Skill1_Key):
+		ShootSkill(Skill1_Key)
 
 func _on_weapon_countdown_timeout():
 	Shootable = true
@@ -157,3 +163,6 @@ func Hit(Damage):
 func Kill(NewCoins):
 	Coins += NewCoins
 	UI.setCoins(Coins)
+
+func ShootSkill(SkillName):
+	print("Shoot")
