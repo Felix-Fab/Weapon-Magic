@@ -2,7 +2,7 @@ extends Control
 
 @onready var MapSelect = $MapsSelect/MapContainer
 
-func _process(delta):
+func _process(_delta):
 	MapSelect.get_node("Map" + str(Game.MapSelect)).grab_focus()
 
 func _on_map_1_focus_entered():

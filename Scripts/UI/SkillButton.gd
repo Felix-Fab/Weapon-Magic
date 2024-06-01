@@ -31,4 +31,5 @@ func _on_timer_timeout():
 	Cooldown = false
 
 func shoot():
-	print("Shoot")
+	disabled = true
+	Cooldown = true

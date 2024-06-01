@@ -10,7 +10,5 @@ func _ready():
 	Sprite.texture = load('res://Assets/Weapons/Bullet/' + WeaponDetails.Name + 'Bullet.png')
 
 func _on_body_entered(body):
-	print("Hitted")
-	print("Body")
 	if body.is_in_group("BulletWall"):
 		queue_free()

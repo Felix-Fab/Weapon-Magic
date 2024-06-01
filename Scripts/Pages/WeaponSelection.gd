@@ -3,7 +3,7 @@ extends Control
 @onready var WeaponSelect = $WeaponSelect/WeaponSelect
 @onready var SkillSelect = $SkillsSelect/SkillContainer
 
-func _process(delta):
+func _process(_delta):
 	WeaponSelect.play("Weapon" + str(Game.WeaponSelect))
 	SkillSelect.get_node("Skill" + str(Game.SkillSelect)).grab_focus()
 

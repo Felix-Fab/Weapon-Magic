@@ -2,7 +2,7 @@ extends Control
 
 @onready var PlayerSelect = $PlayerSelect
 
-func _process(delta):
+func _process(_delta):
 	PlayerSelect.play("Player" + str(Game.PlayerSelect))
 
 func _on_left_button_pressed():

@@ -15,7 +15,7 @@ var WavePause = false
 func _ready():
 	spawnWave()
 
-func _process(delta):
+func _process(_delta):
 	UI.SetPauseInfo("Nächste Wave in %02d:%02d Sek." % WavePauseTimeLeft())
 
 func spawnWave():

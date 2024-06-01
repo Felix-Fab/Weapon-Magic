@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var DamageEffekt = $DamageEffect
 @onready var DamageEffektTimer = $DamageEffect/Timer
 @onready var WaveMessage = $WaveMessage
+@onready var Skills = $Skills
 
 func _ready():
 	HealthProgess.value = 100
@@ -34,7 +35,7 @@ func setMana(Mana):
 func setCoins(Coins):
 	CoinsLabel.text = str(Coins)
 
-func showDamageEffect(Always):
+func showDamageEffect(_Always):
 	DamageEffekt.show()
 	DamageEffekt.get_node("AnimationPlayer").play("Fade_In")
 	DamageEffektTimer.start()

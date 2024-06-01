@@ -12,7 +12,7 @@ var PlayerBody: Node2D
 @onready var navigation_agent = $Navigation/NavigationAgent2D
 @onready var HitCooldown = $HitCooldown
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	navigation_agent.target_position = MovementTarget.global_position
 	var direction = (navigation_agent.get_next_path_position() - global_position).normalized()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://bhuen28o5mw6l"]
+[gd_scene load_steps=151 format=3 uid="uid://bhuen28o5mw6l"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterControl.gd" id="1_rubmr"]
 [ext_resource type="Texture2D" uid="uid://cgu8ai41e3ow8" path="res://Assets/Characters/1.png" id="1_u8q1w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ajq0t3q1u41" path="res://Assets/Weapons/Ak47/Ak47.png" id="7_n3f5p"]
 [ext_resource type="Texture2D" uid="uid://b6iidx1y7e3l7" path="res://Assets/Weapons/Pumpgun/Pumpgun.png" id="8_41jsb"]
 [ext_resource type="PackedScene" uid="uid://caicbpu6b66ei" path="res://Szenes/Bullet/WeaponBulletPosition.tscn" id="9_p6cgv"]
+[ext_resource type="AudioStream" uid="uid://bmnv632t38fo1" path="res://Sounds/Weapons/Skills/SkillCooldown.wav" id="11_kqvi3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijk40"]
 size = Vector2(25, 44.1667)
@@ -1210,6 +1211,21 @@ volume_db = -10.0
 
 [node name="EmptySound" type="AudioStreamPlayer2D" parent="."]
 
+[node name="SkillCooldown" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_kqvi3")
+
+[node name="Skills" type="Node2D" parent="."]
+
+[node name="Skill1_Timer" type="Timer" parent="Skills"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Skill2_Timer" type="Timer" parent="Skills"]
+
+[node name="Skill3_Timer" type="Timer" parent="Skills"]
+
+[node name="Skill4_Timer" type="Timer" parent="Skills"]
+
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
 collision_layer = 72
@@ -1220,3 +1236,7 @@ shape = SubResource("RectangleShape2D_l5uyl")
 
 [connection signal="timeout" from="WeaponCountdown" to="." method="_on_weapon_countdown_timeout"]
 [connection signal="timeout" from="WeaponReload" to="." method="_on_weapon_reload_timeout"]
+[connection signal="timeout" from="Skills/Skill1_Timer" to="." method="_on_skill_1_timer_timeout"]
+[connection signal="timeout" from="Skills/Skill2_Timer" to="." method="_on_skill_2_timer_timeout"]
+[connection signal="timeout" from="Skills/Skill3_Timer" to="." method="_on_skill_3_timer_timeout"]
+[connection signal="timeout" from="Skills/Skill4_Timer" to="." method="_on_skill_4_timer_timeout"]

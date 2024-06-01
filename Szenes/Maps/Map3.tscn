@@ -1,18 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://bsuvoy4wusj87"]
+[gd_scene load_steps=22 format=3 uid="uid://b5apw3khc7wyd"]
 
-[ext_resource type="Script" path="res://Scripts/Maps/Start.gd" id="1_4jr2p"]
-[ext_resource type="PackedScene" uid="uid://dpq1a3gus0vh5" path="res://Szenes/UI/UI.tscn" id="2_7n061"]
-[ext_resource type="Texture2D" uid="uid://cwedorejcoo1r" path="res://Assets/Tiles/TX Plant.png" id="3_1qqfp"]
-[ext_resource type="Texture2D" uid="uid://bgcua5bmoefio" path="res://Assets/Tiles/Dungeon/Dungeon tileset.png" id="4_2vw2k"]
-[ext_resource type="Texture2D" uid="uid://cmbirboc1mot1" path="res://Assets/Tiles/TX Tileset Grass.png" id="4_v5fll"]
-[ext_resource type="Texture2D" uid="uid://dj7ylf2yf1qvl" path="res://Assets/Tiles/TX Struct.png" id="5_6lr61"]
-[ext_resource type="Texture2D" uid="uid://bsdvawxy4fiyp" path="res://Assets/Tiles/TX Tileset Wall.png" id="6_q086x"]
-[ext_resource type="Texture2D" uid="uid://qwkskhkwubht" path="res://Assets/Tiles/TX Props.png" id="7_084yh"]
-[ext_resource type="PackedScene" uid="uid://bhuen28o5mw6l" path="res://Szenes/Player.tscn" id="8_gebfj"]
-[ext_resource type="PackedScene" uid="uid://c040gwokxaqy3" path="res://Szenes/Enemies/EnemyManager.tscn" id="9_megjt"]
+[ext_resource type="Script" path="res://Scripts/Maps/Start.gd" id="1_wvxdq"]
+[ext_resource type="PackedScene" uid="uid://dpq1a3gus0vh5" path="res://Szenes/UI/UI.tscn" id="2_xomns"]
+[ext_resource type="Texture2D" uid="uid://cwedorejcoo1r" path="res://Assets/Tiles/TX Plant.png" id="3_tey5y"]
+[ext_resource type="Texture2D" uid="uid://bgcua5bmoefio" path="res://Assets/Tiles/Dungeon/Dungeon tileset.png" id="4_1klf2"]
+[ext_resource type="Texture2D" uid="uid://cmbirboc1mot1" path="res://Assets/Tiles/TX Tileset Grass.png" id="5_eeq5s"]
+[ext_resource type="Texture2D" uid="uid://dj7ylf2yf1qvl" path="res://Assets/Tiles/TX Struct.png" id="6_rgdxn"]
+[ext_resource type="Texture2D" uid="uid://bsdvawxy4fiyp" path="res://Assets/Tiles/TX Tileset Wall.png" id="7_hdpj1"]
+[ext_resource type="Texture2D" uid="uid://qwkskhkwubht" path="res://Assets/Tiles/TX Props.png" id="8_glsun"]
+[ext_resource type="PackedScene" uid="uid://bhuen28o5mw6l" path="res://Szenes/Player.tscn" id="9_hxkn1"]
+[ext_resource type="PackedScene" uid="uid://c040gwokxaqy3" path="res://Szenes/Enemies/EnemyManager.tscn" id="10_0jl1q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v00"]
-texture = ExtResource("3_1qqfp")
+texture = ExtResource("3_tey5y")
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
@@ -741,7 +741,7 @@ texture = ExtResource("3_1qqfp")
 7:31/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1yj77"]
-texture = ExtResource("4_2vw2k")
+texture = ExtResource("4_1klf2")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1264,7 +1264,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p5xy"]
-texture = ExtResource("4_v5fll")
+texture = ExtResource("5_eeq5s")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2305,7 +2305,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fi0us"]
-texture = ExtResource("5_6lr61")
+texture = ExtResource("6_rgdxn")
 25:1/0 = 0
 25:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:1/0/physics_layer_0/angular_velocity = 0.0
@@ -2986,7 +2986,7 @@ texture = ExtResource("5_6lr61")
 18:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpqnt"]
-texture = ExtResource("6_q086x")
+texture = ExtResource("7_hdpj1")
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
@@ -3701,7 +3701,7 @@ texture = ExtResource("6_q086x")
 11:21/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eoju"]
-texture = ExtResource("7_084yh")
+texture = ExtResource("8_glsun")
 14:0/0 = 0
 14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:0/0/physics_layer_0/angular_velocity = 0.0
@@ -4799,9 +4799,9 @@ size = Vector2(458, 217)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, 19)
-script = ExtResource("1_4jr2p")
+script = ExtResource("1_wvxdq")
 
-[node name="Ui" parent="." instance=ExtResource("2_7n061")]
+[node name="Ui" parent="." instance=ExtResource("2_xomns")]
 
 [node name="TileMap" type="TileMap" parent="." groups=["BulletWall"]]
 position = Vector2(-3, -19)
@@ -4817,7 +4817,7 @@ layer_2/tile_data = PackedInt32Array(655370, 1441797, 10, 720906, 1441797, 11, 7
 layer_3/name = "Foreground"
 layer_3/tile_data = PackedInt32Array(262152, 1769477, 4, 327688, 1769477, 5, 65545, 1835013, 1, 131081, 1835013, 2, 196617, 1835013, 3, 262153, 1835013, 4, 327689, 1835013, 5, 65546, 1900549, 1, 131082, 1900549, 2, 196618, 1900549, 3, 262154, 1900549, 4, 327690, 1900549, 5, 262155, 1966085, 4, 327691, 1966085, 5, 131076, 655365, 13, 196612, 655365, 14, 262148, 655365, 15, 131077, 720901, 13, 196613, 720901, 14, 262149, 720901, 15, 12, 655365, 13, 65548, 655365, 14, 131084, 655365, 15, 13, 720901, 13, 65549, 720901, 14, 131085, 720901, 15, 589838, 655365, 13, 655374, 655365, 14, 720910, 655365, 15, 589839, 720901, 13, 655375, 720901, 14, 720911, 720901, 15, 917505, 655365, 13, 983041, 655365, 14, 1048577, 655365, 15, 917506, 720901, 13, 983042, 720901, 14, 1048578, 720901, 15, 196622, 655365, 18, 262158, 655365, 19, 196623, 720901, 18, 262159, 720901, 19)
 
-[node name="Player" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("8_gebfj")]
+[node name="Player" parent="." node_paths=PackedStringArray("UI") instance=ExtResource("9_hxkn1")]
 position = Vector2(208, 157)
 input_pickable = true
 Skill1_Key = "skill_1"
@@ -4841,7 +4841,7 @@ position = Vector2(-3, -19)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Height2"]
 polygon = PackedVector2Array(0, 291, 83, 292, 83, 325, 164, 324, 166, 290, 290, 291, 290, 324, 375, 324, 375, 290, 457, 291, 458, 458, 0, 457)
 
-[node name="EnemyManager" parent="." node_paths=PackedStringArray("PlayerCharacter", "UI") instance=ExtResource("9_megjt")]
+[node name="EnemyManager" parent="." node_paths=PackedStringArray("PlayerCharacter", "UI") instance=ExtResource("10_0jl1q")]
 PlayerCharacter = NodePath("../Player")
 SpawnPositions = [Vector2(1002, 551), Vector2(1006, 48), Vector2(36, 510)]
 UI = NodePath("../Ui")

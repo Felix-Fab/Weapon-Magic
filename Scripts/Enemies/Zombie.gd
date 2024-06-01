@@ -11,8 +11,8 @@ var PlayerBody: Node2D
 @export var MovementTarget: Node2D
 @onready var navigation_agent = $Navigation/NavigationAgent2D
 @onready var HitCooldown = $HitCooldown
-	
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	
 	navigation_agent.target_position = MovementTarget.global_position
 	var direction = (navigation_agent.get_next_path_position() - global_position).normalized()
@@ -77,3 +77,18 @@ func _on_hit_cooldown_timeout():
 	if Hitable:
 		PlayerBody.Hit(self.get_meta("Damage"))
 		$AnimatedSprite2D.play("Hit")
+		
+func skillHit(Damage, PlayerPath):
+	if(health == 0):
+		$Healthbar.visible = true
+		
+	health += Damage
+		
+	if health >= self.get_meta("Health"):
+		queue_free()
+			
+		get_parent().enemyKilled("Zombie")
+			
+		get_node(PlayerPath).Kill(self.get_meta("Coins"))
+	else:
+		$Healthbar.value = health
