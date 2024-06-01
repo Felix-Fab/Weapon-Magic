@@ -91,6 +91,7 @@ shape = SubResource("RectangleShape2D_q7tx4")
 sprite_frames = SubResource("SpriteFrames_78f1t")
 
 [node name="ExplodeAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_s5aum")
 frame = 3
