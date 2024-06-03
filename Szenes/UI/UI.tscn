@@ -402,6 +402,8 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
+text = "Q
+"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -460,6 +462,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
+text = "E"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -518,6 +521,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
+text = "F"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -576,6 +580,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
+text = "C"
 horizontal_alignment = 2
 vertical_alignment = 2
 

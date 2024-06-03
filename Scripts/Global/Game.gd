@@ -10,12 +10,20 @@ var MapSelect = 1
 
 var EnemyWaves = [
 	{
-		"NightBorne": 0,
-		"Zombie": 1
+		"NightBorne": 5,
+		"Zombie": 5
 	},
 	{
 		"NightBorne": 6,
 		"Zombie": 6
+	},
+	{
+		"NightBorne": 7,
+		"Zombie": 7
+	},
+	{
+		"NightBorne": 8,
+		"Zombie": 8
 	}
 ]
 

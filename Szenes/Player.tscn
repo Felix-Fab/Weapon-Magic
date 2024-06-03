@@ -1170,6 +1170,7 @@ animations = [{
 size = Vector2(25, 44.1667)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
 collision_layer = 45
 script = ExtResource("1_rubmr")
 
@@ -1221,10 +1222,13 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Skill2_Timer" type="Timer" parent="Skills"]
+one_shot = true
 
 [node name="Skill3_Timer" type="Timer" parent="Skills"]
+one_shot = true
 
 [node name="Skill4_Timer" type="Timer" parent="Skills"]
+one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false

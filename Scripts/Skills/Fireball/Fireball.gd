@@ -32,6 +32,8 @@ func hitAllEnemies():
 		
 func playExplodeAnimation():
 	
+	set_deferred("freeze", true)
+	
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0
 	
@@ -40,5 +42,5 @@ func playExplodeAnimation():
 	ExplodeAnimation.play("default")
 	ExplodeSound.play()
 
-func _on_explode_animation_animation_finished():
+func _on_explode_sound_finished():
 	queue_free()

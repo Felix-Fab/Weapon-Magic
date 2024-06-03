@@ -2,6 +2,12 @@ extends Control
 
 @onready var PlayerSelect = $PlayerSelect
 
+func _ready():
+	Game.PlayerSelect = 1
+	Game.WeaponSelect = 1
+	Game.SkillSelect = 1
+	Game.MapSelect = 1
+
 func _process(_delta):
 	PlayerSelect.play("Player" + str(Game.PlayerSelect))
 

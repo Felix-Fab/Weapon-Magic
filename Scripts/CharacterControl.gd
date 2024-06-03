@@ -69,8 +69,8 @@ func _ready():
 	Camera.set_limit(SIDE_TOP, tilemap_rect.position.y * tilemap_cell_size.y * Tilemap.scale.y)
 	Camera.set_limit(SIDE_BOTTOM, tilemap_rect.end.y * tilemap_cell_size.y * Tilemap.scale.y)
 	
-	UI.Skills.setProgressValue(Skill1_Timer.wait_time, Skill2_Timer.wait_time, Skill3_Timer.wait_time, Skill4_Timer.wait_time)
 	setSkillSetup()
+	UI.Skills.setProgressValue(Skill1_Timer.wait_time, Skill2_Timer.wait_time, Skill3_Timer.wait_time, Skill4_Timer.wait_time)
 	
 func _physics_process(_delta):
 	get_input()

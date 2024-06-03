@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2ntnp7ppm4jf"]
+[gd_scene load_steps=19 format=3 uid="uid://b2ntnp7ppm4jf"]
 
 [ext_resource type="Texture2D" uid="uid://bwdxslpsabhcd" path="res://Assets/Weapons/fireball/Fireball.png" id="1_jyxrr"]
 [ext_resource type="Script" path="res://Scripts/Skills/Fireball/Fireball.gd" id="1_p21fd"]
 [ext_resource type="Texture2D" uid="uid://dycnloci8qdt6" path="res://Assets/Weapons/fireball/Explosion.png" id="2_7hhoc"]
 [ext_resource type="AudioStream" uid="uid://cx1nq3w4im7h" path="res://Sounds/Weapons/Skills/Fire/Fireball/Fire.wav" id="4_alcxk"]
+[ext_resource type="Texture2D" uid="uid://b1swi34bcv4xy" path="res://Assets/Effects/Damage.png" id="4_yqe7h"]
 [ext_resource type="AudioStream" uid="uid://p0wxnrgs3mmv" path="res://Sounds/Weapons/Skills/Fire/Fireball/Explode.wav" id="5_6hi4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7tx4"]
@@ -53,10 +54,14 @@ region = Rect2(64, 0, 32, 34)
 atlas = ExtResource("2_7hhoc")
 region = Rect2(96, 0, 32, 34)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xc0v"]
+atlas = ExtResource("4_yqe7h")
+region = Rect2(495, 270, 495, 270)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5aum"]
 animations = [{
 "frames": [{
-"duration": 3.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sy0g7")
 }, {
 "duration": 1.0,
@@ -67,10 +72,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lmppt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xc0v")
 }],
 "loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqsm0"]
@@ -94,7 +102,7 @@ sprite_frames = SubResource("SpriteFrames_78f1t")
 visible = false
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_s5aum")
-frame = 3
+frame = 4
 frame_progress = 1.0
 
 [node name="FireSound" type="AudioStreamPlayer2D" parent="."]
@@ -115,5 +123,6 @@ shape = SubResource("CircleShape2D_jqsm0")
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="ExplodeAnimation" to="." method="_on_explode_animation_animation_finished"]
+[connection signal="finished" from="ExplodeSound" to="." method="_on_explode_sound_finished"]
 [connection signal="body_entered" from="HitDetection" to="." method="_on_hit_detection_body_entered"]
 [connection signal="body_exited" from="HitDetection" to="." method="_on_hit_detection_body_exited"]

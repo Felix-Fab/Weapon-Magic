@@ -95,8 +95,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_w44ql"]
 radius = 28.0
 
-[node name="NightBorne" type="CharacterBody2D" groups=["BulletWall"]]
-collision_layer = 128
+[node name="NightBorne" type="CharacterBody2D" groups=["BulletWall", "Enemy"]]
+z_index = 1
+collision_layer = 144
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0

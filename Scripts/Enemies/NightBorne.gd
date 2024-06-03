@@ -77,3 +77,18 @@ func _on_hit_cooldown_timeout():
 	if Hitable:
 		PlayerBody.Hit(self.get_meta("Damage"))
 		$AnimatedSprite2D.play("Hit")
+		
+func skillHit(Damage, PlayerPath):
+	if(health == 0):
+		$Healthbar.visible = true
+		
+	health += Damage
+		
+	if health >= self.get_meta("Health"):
+		queue_free()
+			
+		get_parent().enemyKilled("NightBorne")
+			
+		get_node(PlayerPath).Kill(self.get_meta("Coins"))
+	else:
+		$Healthbar.value = health
