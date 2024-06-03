@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://byqo2m43feh5e"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/Fire/FireLake.gd" id="1_3rt0u"]
+[ext_resource type="Texture2D" uid="uid://dlf00fwm0uhm8" path="res://Assets/Skills/Fire/FireLake.png" id="2_j1okr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvmax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqg5w"]
+atlas = ExtResource("2_j1okr")
+region = Rect2(0, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx6r6"]
+atlas = ExtResource("2_j1okr")
+region = Rect2(32, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4sn6"]
+atlas = ExtResource("2_j1okr")
+region = Rect2(64, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qq6t"]
+atlas = ExtResource("2_j1okr")
+region = Rect2(96, 0, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78f1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqg5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx6r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4sn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qq6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireLake" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 128
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_3rt0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.2, 3.2)
+shape = SubResource("CircleShape2D_cvmax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_78f1t")
+frame_progress = 0.245417
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
